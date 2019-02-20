@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    border: red solid 1px;
+    display: grid;
+    grid-template-areas:
+            'header header header header header header header header header header header header'
+            'nav nav nav nav nav nav nav nav nav nav nav nav'
+            'team team team team team team team team team team team team '
+            'game game game game game game game game game scoring scoring scoring'
+            'match match match match match match stats stats stats stats stats stats'
+            'footer footer footer footer footer footer footer footer footer footer footer footer';
+    grid-template-columns: repeat(12, 1fr);
+/*    grid-template-rows: repeat(2, 1fr);  */
+    margin: auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 {
+    border: red solid 1px;
+    font-size: 2rem;
+}
+
+.item1 {
+    border: red solid 1px;
+    grid-area: header;
+}
+
+.item2 {
+    border: red solid 1px;
+    grid-area: nav;
+}
+
+.item3 {
+    border: red solid 1px;
+    grid-area: game
+}
+
+.item4 {
+    border: red solid 1px;
+    grid-area: scoring;
+}
+
+.item5 {
+    border: red solid 1px;
+    grid-area: match;
+}
+
+.item6 {
+    border: red solid 1px;
+    grid-area: stats;
+}
+
+.item7 {
+    border: red solid 1px;
+    grid-area: footer;
+}
+

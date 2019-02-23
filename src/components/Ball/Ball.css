@@ -8,3 +8,10 @@
     -webkit-appearance: none;
     width: 16px;
 }
+
+.tbl-ball {}
+
+.td-ball {
+    margin: 0;
+    padding: 0;
+}

@@ -5,18 +5,18 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {ScoringNumberPad} from '../components/ScoringNumberPad/ScoringNumberPad';
+import {ScoringByPinFall} from '../components/ScoringByPinFall/ScoringByPinFall';
 Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
-	ReactDOM.render(<ScoringNumberPad />, div);
+	ReactDOM.render(<ScoringByPinFall />, div);
 	ReactDOM.unmountComponentAtNode(div);
 });
 
-it('should render ScoringNumberPad', () => {
-	const wrapper = shallow(<ScoringNumberPad/>);
+it('should render ScoringByPinFall', () => {
+	const wrapper = shallow(<ScoringByPinFall/>);
 	expect(wrapper.containsAllMatchingElements([
-		<input />
+		<div>Score by Pin Fall</div>
 	])).to.equal(true);
 });

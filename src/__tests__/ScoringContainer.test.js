@@ -5,9 +5,9 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {ScoringContainer} from '../components/ScoringContainer/ScoringContainer';
-import {ScoringPinFall} from '../components/ScoringPinFall/ScoringPinFall';
-import {ScoringNumberPad} from '../components/ScoringNumberPad/ScoringNumberPad';
+import {ScoringContainer} from '../components/GameScoringContainer/GameScoringContainer';
+import {ScoringByPinFall} from '../components/ScoringByPinFall/ScoringByPinFall';
+import {ScoringByNumberPad} from '../components/ScoringByNumberPad/ScoringByNumberPad';
 Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
@@ -16,10 +16,10 @@ it('renders without crashing', () => {
 	ReactDOM.unmountComponentAtNode(div);
 });
 
-it('should render ScoringContainer', () => {
+it('should render GameScoringContainer', () => {
 	const wrapper = shallow(<ScoringContainer/>);
 	expect(wrapper.containsAllMatchingElements([
-		<ScoringPinFall />,
-		<ScoringNumberPad />
+		<ScoringByPinFall />,
+		<ScoringByNumberPad />
 	])).to.equal(true);
 });

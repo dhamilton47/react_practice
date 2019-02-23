@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {Ball} from '../Ball/Ball';
-import {ScoringContainer} from "../ScoringContainer/ScoringContainer";
+import {GameScoringContainer} from '../GameScoringContainer/GameScoringContainer';
+import {MatchScoringContainer} from '../MatchScoringContainer/MatchScoringContainer';
+import {GameContainer} from "../GameContainer/GameContainer";
+import {StatsContainer} from "../StatsContainer/StatsContainer";
+import {Settings} from "../Settings/Settings";
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			contestID: 0,
+			contestOpponents: [],
+			contestSides: [],
+			contestFormat: {linage: 0, baker: 0},
+			contestLocation: [],
+			contestDate: [],
+			gameID: [],
+			players: []
+		};
+	}
+
 	render() {
 		return (
 			<div className="App">
 				<h1 className="item1">Bowling Testing Page</h1>
-				<div className="item2">NavBar</div>
-
-				<div className="item3">
-					Game Panel
-					<Ball/>
-				</div>
-				<div className="item4">
-					Scoring Panel
-					<ScoringContainer/>
-				</div>
-				<div className="item5">Match Panel</div>
-				<div className="item6">Stats Panel</div>
-				<div className="item7">Footer</div>
+				<div className="navigation">NavBar</div>
+				<Settings/>
+				<GameContainer/>
+				<GameScoringContainer/>
+				<MatchScoringContainer/>
+				<StatsContainer/>
+				<div className="item2">Footer</div>
 			</div>
 		);
 	}

@@ -1,0 +1,26 @@
+.game-container {
+    border: red solid 1px;
+    display: grid;
+    grid-template-areas:
+            'bowler frames frames frames frames frames frames frames frames frames frames total';
+    grid-template-columns: 2fr repeat(11, 1fr);
+    grid-template-rows: 1fr;
+    margin: 0;
+    /*    max-width: 900px;
+        text-align: center; */
+}
+
+.frames-slot {
+    border: red solid 1px;
+/*    grid-area: frames; */
+}
+.bowler-slot {
+    border: red solid 1px;
+/*    grid-area: bowler; */
+    grid-column: 1 / span 2;
+}
+.total-slot {
+    border: red solid 1px;
+/*    grid-area: total; */
+    grid-column: 12 / span 1;
+}

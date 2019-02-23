@@ -1,0 +1,44 @@
+table {
+    background: #666;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-rnd {
+    border-radius: .875rem;
+    color: #666;
+    height: 1.75rem;
+    margin: 4px 8px;
+    padding: 0;
+    text-align: center;
+    width: 1.75rem;
+}
+
+.btn-sqr {
+    border-radius: 0rem;
+    color: #666;
+    height: 1.75rem;
+    margin: 4px 8px;
+    padding: 0;
+    text-align: center;
+    width: 1.75rem;
+}
+
+.btn-rnd:visited,
+.btn-sqr:visited {
+    color: white;
+}
+
+.btn-rnd:hover,
+.btn-sqr:hover {
+    color: #666;
+    border-style: none;
+}
+
+img {
+    border-style: none;
+    text-decoration: none;
+}

@@ -8,6 +8,7 @@
     grid-template-areas:
             'header header header header header header header header header header header header'
             'nav nav nav nav nav nav nav nav nav nav nav nav'
+            'settings settings settings settings settings settings settings settings settings settings settings settings'
             'team team team team team team team team team team team team '
             'game game game game game game game game game scoring scoring scoring'
             'match match match match match match stats stats stats stats stats stats'
@@ -15,7 +16,7 @@
     grid-template-columns: repeat(12, 1fr);
 /*    grid-template-rows: repeat(2, 1fr);  */
     margin: auto;
-    max-width: 900px;
+    max-width: 1000px;
     text-align: center;
 }
 
@@ -31,31 +32,35 @@ h1 {
 
 .item2 {
     border: red solid 1px;
+    grid-area: footer;
+}
+
+.navigation {
+    border: red solid 1px;
     grid-area: nav;
 }
 
-.item3 {
+.settings {
+    border: red solid 1px;
+    grid-area: settings
+}
+
+.game {
     border: red solid 1px;
     grid-area: game
 }
 
-.item4 {
+.scoring {
     border: red solid 1px;
     grid-area: scoring;
 }
 
-.item5 {
+.match {
     border: red solid 1px;
     grid-area: match;
 }
 
-.item6 {
+.stats {
     border: red solid 1px;
     grid-area: stats;
 }
-
-.item7 {
-    border: red solid 1px;
-    grid-area: footer;
-}
-

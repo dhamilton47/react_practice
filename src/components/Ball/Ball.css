@@ -1,7 +1,10 @@
 .btn-ball {
-    border: red solid 1px;
+    border-bottom: red solid 1px;
+    border-left: red solid 1px;
+    border-right: white solid 1px;
+    border-top: white solid 1px;
     font-size: 10px;
-    height: 16px;
+    height: 18px;
     margin: 0;
     padding: 0;
     text-align: center;

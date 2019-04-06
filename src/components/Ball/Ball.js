@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Ball.css';
 
-// Ball will a class w/state
+// Ball is a class w/ state/props?
 
 // this.state = {
 //      game: #,
@@ -9,10 +9,20 @@ import './Ball.css';
 //      position: 1, 2, or 3
 //  }
 
-export class Ball extends Component {
+class Ball extends Component {
+
 	render() {
+
 		return (
-			<button className="btn-ball" type="button" disabled="disabled">X</button>
+			<button
+				className="btn-ball"
+				style={{gridArea: this.props.location3}}
+				type="button"
+				disabled="disabled">
+				{this.props.gameID}
+			</button>
 		);
 	}
 }
+
+export default Ball;

@@ -1,45 +1,60 @@
 import React, {Component} from 'react';
 import './Game.css';
-import {Frames} from "../Frames/Frames";
-import {Bowler} from "../Bowler/Bowler";
+import Frames from "../Frames/Frames";
+import Bowler from "../Bowler/Bowler";
 
-export class Game extends Component {
+class Game extends Component {
 	render() {
 		return (
 			<div className="game-container">
-				<Bowler/>
-				<Frames frame={1}/>
-				<Frames frame={2}/>
-				<Frames frame={3}/>
-				<Frames frame={4}/>
-				<Frames frame={5}/>
-				<Frames frame={6}/>
-				<Frames frame={7}/>
-				<Frames frame={8}/>
-				<Frames frame={9}/>
-				<Frames frame={10}/>
-				<Frames frame={11}/>
+				<Bowler player={this.props.player}/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={1}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={2}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={3}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={4}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={5}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={6}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={7}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={8}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={9}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={10}
+				/>
+				<Frames
+					gameID={this.props.gameID}
+					frame={11}
+				/>
 			</div>
 		);
-
-/*		return (
-			<table>
-				<tbody>
-				<tr>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-					<td><Frames/></td>
-				</tr>
-				</tbody>
-			</table>
-		);
-		*/
 	}
 }
+
+export default Game;

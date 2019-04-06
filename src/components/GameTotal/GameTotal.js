@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './GameTotal.css';
 
-export class GameTotal extends Component {
+class GameTotal extends Component {
 	render() {
 		return <div>300</div>
 	}
 }
+
+export default GameTotal;

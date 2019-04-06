@@ -1,24 +1,26 @@
 import React, {Component} from 'react';
-import {Game} from "../Game/Game";
+import Game from "../Game/Game";
 
-export class GameContainer extends Component {
+class GameContainer extends Component {
 	render() {
 		return (
 			<div className="game">
 				Game Panel
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
-				<Game/>
+				<Game
+					gameID={1}
+					player={this.props.players[0]}
+				/>
+				<Game
+					gameID={2}
+					player={this.props.players[1]}
+				/>
+				<Game
+					gameID={3}
+					player={this.props.players[2]}
+				/>
 			</div>
 		);
 	}
 }
+
+export default GameContainer;

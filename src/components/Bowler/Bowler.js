@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import './Bowler.css';
 
-export class Bowler extends Component {
+class Bowler extends Component {
 	render() {
 		return (
-			<div>Bowler's name</div>
+			<div className="bowler-slot">
+
+					{this.props.player ? this.props.player : "Bowler's name"}
+
+			</div>
 		);
 	}
 }
+
+export default Bowler;

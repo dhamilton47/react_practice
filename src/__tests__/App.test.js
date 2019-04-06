@@ -5,14 +5,13 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import App from '../components/App/App';
-import {GameContainer} from "../components/GameContainer/GameContainer";
+import GameContainer from "../components/GameContainer/GameContainer";
 import {GameScoringContainer} from "../components/GameScoringContainer/GameScoringContainer";
 import {MatchScoringContainer} from "../components/MatchScoringContainer/MatchScoringContainer";
 import {StatsContainer} from "../components/StatsContainer/StatsContainer";
 import {Settings} from "../components/Settings/Settings";
 
 Enzyme.configure({ adapter: new Adapter() });
-
 
 describe('App', () => {
 	it('renders without crashing', () => {
@@ -70,5 +69,10 @@ describe('App', () => {
 	it('should start with no players', () => {
 		const wrapper = shallow(<App/>);
 		expect(wrapper.state('players')).to.eql([]);
+	});
+
+	it('should have props for contestID', function () {
+		const wrapper = shallow(<App/>);
+		expect(wrapper.props().contestID).to.be.undefined;
 	});
 });

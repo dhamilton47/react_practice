@@ -1,5 +1,5 @@
 .game-container {
-    border: red solid 1px;
+    border-bottom: red solid 1px;
     display: grid;
     grid-template-areas:
             'bowler frames frames frames frames frames frames frames frames frames frames total';
@@ -10,17 +10,14 @@
         text-align: center; */
 }
 
-.frames-slot {
-    border: red solid 1px;
-/*    grid-area: frames; */
-}
 .bowler-slot {
-    border: red solid 1px;
-/*    grid-area: bowler; */
+
     grid-column: 1 / span 2;
+    margin: auto 0;
+    padding: 0;
 }
+
 .total-slot {
     border: red solid 1px;
-/*    grid-area: total; */
     grid-column: 12 / span 1;
 }

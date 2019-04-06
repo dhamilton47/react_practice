@@ -1,18 +1,43 @@
 import React, {Component} from 'react';
 import './Frames.css';
-import {Ball} from "../Ball/Ball";
-import {GameTotal} from "../GameTotal/GameTotal";
+import Ball from "../Ball/Ball";
+import GameTotal from "../GameTotal/GameTotal";
 
-export class Frames extends Component {
+class Frames extends Component {
 	render() {
 		const divStyle = {gridColumn: (this.props.frame + 2) + ' / span 1'};
 		return (
 			<div className="frames-container" style={divStyle}>
-				<div className="left-slot" ><Ball position={0}/></div>
-				<div className="middle-slot"><Ball position={1}/></div>
-				<div className="right-slot" ><Ball position={2}/></div>
-				<div className="score-block"><GameTotal/></div>
+				<Ball
+					gameID={this.props.gameID}
+					frames={this.props.frame}
+					location={"left"}
+					position={0}
+					value={2}
+				/>
+
+				<Ball
+					gameID={this.props.gameID}
+					frames={this.props.frame}
+					location={"middle"}
+					position={1}
+					value={3}
+				/>
+
+				<Ball
+					gameID={this.props.gameID}
+					frames={this.props.frame}
+					location={"right"}
+					position={2}
+					value={null}
+				/>
+
+				<div className="score-block">
+					<GameTotal/>
+				</div>
 			</div>
 		);
 	}
 }
+
+export default Frames;

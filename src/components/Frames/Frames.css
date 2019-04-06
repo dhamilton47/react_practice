@@ -12,15 +12,15 @@
 }
 
 .left-slot {
-    border: red solid 1px;
+/*    border: red solid 1px; */
     grid-area: left;
 }
 .middle-slot {
-    border: red solid 1px;
+/*    border: red solid 1px; */
     grid-area: middle;
 }
 .right-slot {
-    border: red solid 1px;
+/*    border: red solid 1px; */
     grid-area: right;
 }
 .score-block {

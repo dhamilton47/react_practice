@@ -5,7 +5,7 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import Ball from '../components/Ball/Ball';
+import Ball from '../components/Bowling/Ball/Ball';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Ball>', () => {

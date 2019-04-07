@@ -4,9 +4,9 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import Game from '../components/Game/Game';
-import Bowler from "../components/Bowler/Bowler";
-import Frames from "../components/Frames/Frames";
+import Game from '../components/Bowling/Game/Game';
+import Bowler from "../components/Bowling/Bowler/Bowler";
+import Frames from "../components/Bowling/Frames/Frames";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Game>', () => {

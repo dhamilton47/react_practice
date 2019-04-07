@@ -5,7 +5,7 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {ScoringByNumberPad} from '../components/ScoringByNumberPad/ScoringByNumberPad';
+import {ScoringByNumberPad} from '../components/Bowling/ScoringByNumberPad/ScoringByNumberPad';
 Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {

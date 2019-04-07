@@ -5,11 +5,11 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import App from '../components/App/App';
-import GameContainer from "../components/GameContainer/GameContainer";
-import {GameScoringContainer} from "../components/GameScoringContainer/GameScoringContainer";
-import {MatchScoringContainer} from "../components/MatchScoringContainer/MatchScoringContainer";
+import GameContainer from "../components/Bowling/GameContainer/GameContainer";
+import {GameScoringContainer} from "../components/Bowling/GameScoringContainer/GameScoringContainer";
+import {MatchScoringContainer} from "../components/Bowling/MatchScoringContainer/MatchScoringContainer";
 import {StatsContainer} from "../components/StatsContainer/StatsContainer";
-import {Settings} from "../components/Settings/Settings";
+import {Settings} from "../components/Bowling/Settings/Settings";
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {GameScoringContainer} from '../GameScoringContainer/GameScoringContainer';
-import {MatchScoringContainer} from '../MatchScoringContainer/MatchScoringContainer';
-import GameContainer from "../GameContainer/GameContainer";
+import {GameScoringContainer} from '../Bowling/GameScoringContainer/GameScoringContainer';
+import {MatchScoringContainer} from '../Bowling/MatchScoringContainer/MatchScoringContainer';
+import GameContainer from "../Bowling/GameContainer/GameContainer";
 import {StatsContainer} from "../StatsContainer/StatsContainer";
-import {Settings} from "../Settings/Settings";
+import {Settings} from "../Bowling/Settings/Settings";
 
 class App extends Component {
 	constructor(props) {

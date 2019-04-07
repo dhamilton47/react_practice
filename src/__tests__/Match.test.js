@@ -4,8 +4,8 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {MatchScoringContainer} from '../components/MatchScoringContainer/MatchScoringContainer';
-import {Ball} from "../components/Ball/Ball";
+import {MatchScoringContainer} from '../components/Bowling/MatchScoringContainer/MatchScoringContainer';
+import {Ball} from "../components/Bowling/Ball/Ball";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Match>', () => {

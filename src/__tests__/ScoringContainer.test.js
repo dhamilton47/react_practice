@@ -5,9 +5,9 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {ScoringContainer} from '../components/GameScoringContainer/GameScoringContainer';
-import {ScoringByPinFall} from '../components/ScoringByPinFall/ScoringByPinFall';
-import {ScoringByNumberPad} from '../components/ScoringByNumberPad/ScoringByNumberPad';
+import {ScoringContainer} from '../components/Bowling/GameScoringContainer/GameScoringContainer';
+import {ScoringByPinFall} from '../components/Bowling/ScoringByPinFall/ScoringByPinFall';
+import {ScoringByNumberPad} from '../components/Bowling/ScoringByNumberPad/ScoringByNumberPad';
 Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {

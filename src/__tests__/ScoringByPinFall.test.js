@@ -5,7 +5,7 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDOM from 'react-dom';
-import {ScoringByPinFall} from '../components/ScoringByPinFall/ScoringByPinFall';
+import {ScoringByPinFall} from '../components/Bowling/ScoringByPinFall/ScoringByPinFall';
 Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {

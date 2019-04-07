@@ -6,7 +6,7 @@ import './SocialCard.css';
 class SocialCard extends Component {
 	render() {
 		return (
-			<div className={'App'}>
+			<div className={'social-card-tb'}>
 				<ImageArea/>
 				<TextArea/>
 			</div>

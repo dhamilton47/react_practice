@@ -2,46 +2,69 @@
     box-sizing: border-box;
 }
 
-.App {
-    border: red solid 1px;
+.social-card-tb {
+    /*   border: red solid 1px; */
     display: grid;
     grid-template-areas:
-        'left right';
+            'top'
+            'bottom';
+/*    grid-template-rows: repeat(2, 1fr);  */
+    margin: auto;
+    max-width: 300px;
+    padding: 0px 0;
+    text-align: left;
+}
+
+.social-card-lr {
+    /*   border: red solid 1px; */
+    display: grid;
+    grid-template-areas:
+            'left right';
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
     max-width: 600px;
-    padding: 20px 0;
+    padding: 0px 0;
     text-align: left;
 }
 
 .left {
-    border: red solid 1px;
+/*    border: red solid 1px; */
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
     grid-area: left;
     grid-template-columns: 1fr;
     margin: 0;
-    padding: 0;
-}
-
-.top {
-    border: red solid 1px;
-    grid-area: top;
-}
-
-.bottom {
-    border: red solid 1px;
-    grid-area: bottom;
+/*    padding: 0; */
 }
 
 .right {
     border: red solid 1px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     grid-area: right;
     grid-template-columns: 1fr;
     margin: 0;
-    padding: 0;
+    /*    padding: 0;*/
+}
+
+.top {
+ /*   border: red solid 1px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    grid-area: top;
+    margin: 0;
+}
+
+.bottom {
+ /*   border: red solid 1px; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    grid-area: bottom;
+    margin: 0;
 }
 
 h1 {
-    border: red solid 1px;
+   border: red solid 1px;
     font-size: 2rem;
 }
 
@@ -74,4 +97,68 @@ h1 {
     grid-area: item3;
     margin: 0;
     padding: 5px;
+}
+
+
+/* Universal Styles */
+
+body,
+html,
+#root {
+    height: 100%;
+}
+
+html {
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 560px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Reusable Component - Image Container */
+
+.image-container {
+    text-align: right;
+    box-sizing: content-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin: 0;
+    padding: 3px;
+}
+
+.image-container img {
+    height: 32px;
+}
+
+/* App Styles */
+
+.App {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    padding: .66rem 0;
+    text-align: center;
+    background-color: #cca353;
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.avatar-name {
+    color: orange;
+    font-weight: bold;
+    padding: 7px;
+    text-align: center;
+    vertical-align: middle;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SocialCard.css';
 
-class TagLine extends Component {
+class Blurb extends Component {
 	render() {
 		return (
 			<div className={this.props.location}>
@@ -12,8 +12,8 @@ class TagLine extends Component {
 	}
 }
 
-TagLine.propTypes = {
+Blurb.propTypes = {
 	className: PropTypes.string
 };
 
-export default TagLine;
+export default Blurb;

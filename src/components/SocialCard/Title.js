@@ -5,7 +5,7 @@ import './SocialCard.css';
 class Title extends Component{
 	render() {
 		return (
-			<div className={this.props.location} style={{fontSize: this.props.size, fontWeight: "bold"}}>
+			<div className={this.props.location} style={{fontSize: this.props.size, fontWeight: "bold", color: this.props.color, padding: this.props.pad}}>
 				Learning React? Start Small.
 			</div>
 		);

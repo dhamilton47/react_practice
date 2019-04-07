@@ -10,7 +10,7 @@ import TextArea from '../components/SocialCard/TextArea';
 import Logo from '../components/SocialCard/Logo';
 import Title from '../components/SocialCard/Title';
 import Avatar from '../components/SocialCard/Avatar';
-import TagLine from '../components/SocialCard/TagLine';
+import Blurb from '../components/SocialCard/Blurb';
 import SiteLink from '../components/SocialCard/SiteLink';
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -50,11 +50,11 @@ describe('ImageArea', () => {
 });
 
 describe('TextArea', () => {
-	it('should contain a Title, TagLine and SiteLink', () => {
+	it('should contain a Title, Blurb and SiteLink', () => {
 		const wrapper = shallow(<TextArea/>);
 		expect(wrapper.containsAllMatchingElements([
 			<Title/>,
-			<TagLine/>,
+			<Blurb/>,
 			<SiteLink/>
 		])).to.equal(true);
 	});

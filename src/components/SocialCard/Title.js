@@ -5,16 +5,19 @@ import './SocialCard.css';
 class Title extends Component{
 	render() {
 		return (
-			<div className={this.props.location} style={{fontSize: this.props.size, fontWeight: "bold", color: this.props.color, padding: this.props.pad}}>
-				Learning React? Start Small.
+			<div className={this.props.location}>
+				<div className={this.props.appearance}>
+					{this.props.title}
+				</div>
 			</div>
 		);
 	}
 }
 
 Title.propTypes = {
-	className: PropTypes.string,
-	size: PropTypes.number
+	location: PropTypes.string,
+	appearance: PropTypes.string,
+	title: PropTypes.string
 };
 
 export default Title;

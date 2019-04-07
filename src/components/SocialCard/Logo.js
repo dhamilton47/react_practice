@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SocialCard.css';
-import logo from '../../images/TSKSolutionsLogo.bmp';
 
 class Logo extends Component {
 	render() {
 		return (
 			<div className={this.props.location}>
 				<div className={'logo'}>
-					<img src={logo} alt="TSK Solutions Logo" width="100"/>
+					<img src={this.props.imgLogo} alt={this.props.altImgLogo} width="100"/>
 				</div>
 			</div>
 		);
@@ -16,7 +15,9 @@ class Logo extends Component {
 }
 
 Logo.propTypes = {
-	className: PropTypes.string
+	location: PropTypes.string,
+	imgLogo: PropTypes.string,
+	altImgLogo: PropTypes.string
 };
 
 export default Logo;

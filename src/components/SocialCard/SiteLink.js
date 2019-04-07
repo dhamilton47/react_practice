@@ -6,14 +6,17 @@ class SiteLink extends Component {
 	render() {
 		return (
 			<div className={this.props.location}>
-				dev.to
+				<p style={{color: 'darkgray'}}>
+					{this.props.site}
+				</p>
 			</div>
 		);
 	}
 }
 
 SiteLink.propTypes = {
-	className: PropTypes.string
+	location: PropTypes.string,
+	site: PropTypes.string
 };
 
 export default SiteLink;

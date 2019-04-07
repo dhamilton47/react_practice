@@ -2,104 +2,6 @@
     box-sizing: border-box;
 }
 
-.social-card-tb {
-    /*   border: red solid 1px; */
-    display: grid;
-    grid-template-areas:
-            'top'
-            'bottom';
-/*    grid-template-rows: repeat(2, 1fr);  */
-    margin: auto;
-    max-width: 300px;
-    padding: 0px 0;
-    text-align: left;
-}
-
-.social-card-lr {
-    /*   border: red solid 1px; */
-    display: grid;
-    grid-template-areas:
-            'left right';
-    grid-template-columns: repeat(2, 1fr);
-    margin: auto;
-    max-width: 600px;
-    padding: 0px 0;
-    text-align: left;
-}
-
-.left {
-/*    border: red solid 1px; */
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    grid-area: left;
-    grid-template-columns: 1fr;
-    margin: 0;
-/*    padding: 0; */
-}
-
-.right {
-    border: red solid 1px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    grid-area: right;
-    grid-template-columns: 1fr;
-    margin: 0;
-    /*    padding: 0;*/
-}
-
-.top {
- /*   border: red solid 1px; */
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    grid-area: top;
-    margin: 0;
-}
-
-.bottom {
- /*   border: red solid 1px; */
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    grid-area: bottom;
-    margin: 0;
-}
-
-h1 {
-   border: red solid 1px;
-    font-size: 2rem;
-}
-
-.card {
-    border: red solid 1px;
-    display: grid;
-    grid-template-areas:
-            'item1'
-            'item2'
-            'item3';
-    padding: 5px;
-}
-
-.item1 {
-    border: red solid 1px;
-    grid-area: item1;
-    margin: 0;
-    padding: 5px;
-}
-
-.item2 {
-    border: red solid 1px;
-    grid-area: item2;
-    margin: 0;
-    padding: 5px;
-}
-
-.item3 {
-    border: red solid 1px;
-    grid-area: item3;
-    margin: 0;
-    padding: 5px;
-}
-
-
 /* Universal Styles */
 
 body,
@@ -112,14 +14,102 @@ html {
     font-size: 18px;
 }
 
-@media only screen and (max-width: 560px) {
-    html {
-        font-size: 15px;
-    }
+.social-card-tb {
+/*    border: red solid 1px; */
+    display: grid;
+    font-family: 'Work Sans', sans-serif;
+    grid-template-areas:
+            'top'
+            'bottom';
+    margin: auto;
+    max-width: 600px;
+    padding: 0;
+    text-align: left;
 }
 
-input:focus {
-    outline: none;
+.social-card-lr {
+/*    border: red solid 1px; */
+    display: grid;
+    font-family: 'Work Sans', sans-serif;
+    grid-template-areas:
+            'left right';
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    max-width: 600px;
+    padding: 0;
+    text-align: left;
+}
+
+.left {
+/*    border: red solid 1px; */
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    grid-area: left;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 1fr 50px;
+    margin: 0;
+}
+
+.right {
+/*    border: red solid 1px; */
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    grid-area: right;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 1fr 50px;
+    margin: 0;
+}
+
+.top {
+/*    border: red solid 1px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    grid-area: top;
+    margin: 0;
+}
+
+.bottom {
+/*    border: red solid 1px; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    grid-area: bottom;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.card {
+    border: lightgrey solid 1px;
+    display: grid;
+    grid-template-areas:
+            'item1'
+            'item2'
+            'item3';
+    padding: 5px;
+}
+
+.item1 {
+/*    border: red solid 1px; */
+    grid-area: item1;
+    margin: 0;
+    padding: 5px;
+    vertical-align: bottom;
+}
+
+.item2 {
+/*    border: red solid 1px; */
+    grid-area: item2;
+    margin: 0;
+    padding: 5px;
+}
+
+.item3 {
+/*    border: red solid 1px; */
+    grid-area: item3;
+    margin: 0;
+    padding: 5px;
 }
 
 /* Reusable Component - Image Container */
@@ -140,23 +130,11 @@ input:focus {
     height: 32px;
 }
 
-/* App Styles */
-
-.App {
-    font-family: 'Work Sans', sans-serif;
-}
-
-h1 {
-    padding: .66rem 0;
-    text-align: center;
-    background-color: #cca353;
-    font-family: Poppins, sans-serif;
-    font-size: 1.8rem;
-    color: #fff;
-}
+/* Component Specific Styles */
 
 .avatar-name {
     color: orange;
+    font-family: Cambria, sans-serif;
     font-weight: bold;
     padding: 7px;
     text-align: center;
@@ -165,4 +143,23 @@ h1 {
 
 .logo {
     text-align: left;
+}
+
+.title-lg {
+     font-size: 2.375rem;
+     font-weight: normal;
+     color: white;
+     padding: 1rem 1.5rem;
+}
+
+.title-sm {
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 20px 5px 0 5px;
+    vertical-align: text-bottom;
+}
+
+p {
+    padding: 5px;
 }

@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 import './SocialCard.css';
 
 class Blurb extends Component {
+
 	render() {
 		return (
 			<div className={this.props.location}>
-				Can't pry yourself away from the tutorials? The cure is to make tiny little experiment apps.
+				<p>
+					{this.props.text}
+				</p>
 			</div>
 		);
 	}
 }
 
 Blurb.propTypes = {
-	className: PropTypes.string
+	location: PropTypes.string,
+	text: PropTypes.string
 };
 
 export default Blurb;

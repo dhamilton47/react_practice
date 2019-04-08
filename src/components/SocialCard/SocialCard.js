@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImageArea from './ImageArea'
+import { ImageArea } from './ImageArea'
 import { TextArea } from "./TextArea";
 import './SocialCard.css';
 import tsk from '../../images/TSKSolutionsLogo.bmp';

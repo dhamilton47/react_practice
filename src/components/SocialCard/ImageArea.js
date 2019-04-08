@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import "./SocialCard.css";
 import { Avatar } from "./Avatar";
 import { Logo } from "./Logo";
-import Title from "./Title";
+import { Title } from "./Title";
 
 class ImageArea extends Component {
 	render() {

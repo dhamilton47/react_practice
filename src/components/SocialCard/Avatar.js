@@ -14,7 +14,7 @@ export const Avatar = props => {
 };
 
 Avatar.propTypes = {
-	location: PropTypes.string.isRequired,
+	location: PropTypes.string,
 	picture: PropTypes.shape({
 		src: PropTypes.string.isRequired,
 		alt: PropTypes.string.isRequired

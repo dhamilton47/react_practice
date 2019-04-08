@@ -13,7 +13,7 @@ export const Logo = props => {
 };
 
 Logo.propTypes = {
-	location: PropTypes.string.isRequired,
+	location: PropTypes.string,
 	logo: PropTypes.shape({
 		src: PropTypes.string.isRequired,
 		alt: PropTypes.string.isRequired

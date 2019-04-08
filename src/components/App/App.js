@@ -4,7 +4,7 @@ import './App.css';
 import {GameScoringContainer} from '../Bowling/GameScoringContainer/GameScoringContainer';
 import {MatchScoringContainer} from '../Bowling/MatchScoringContainer/MatchScoringContainer';
 import GameContainer from "../Bowling/GameContainer/GameContainer";
-import {StatsContainer} from "../StatsContainer/StatsContainer";
+import {StatsContainer} from "../Bowling/StatsContainer/StatsContainer";
 import {Settings} from "../Bowling/Settings/Settings";
 
 class App extends Component {

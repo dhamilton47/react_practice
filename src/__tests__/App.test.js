@@ -8,7 +8,7 @@ import App from '../components/App/App';
 import GameContainer from "../components/Bowling/GameContainer/GameContainer";
 import {GameScoringContainer} from "../components/Bowling/GameScoringContainer/GameScoringContainer";
 import {MatchScoringContainer} from "../components/Bowling/MatchScoringContainer/MatchScoringContainer";
-import {StatsContainer} from "../components/StatsContainer/StatsContainer";
+import {StatsContainer} from "../components/Bowling/StatsContainer/StatsContainer";
 import {Settings} from "../components/Bowling/Settings/Settings";
 
 Enzyme.configure({ adapter: new Adapter() });

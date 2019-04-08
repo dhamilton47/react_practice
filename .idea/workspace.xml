@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/TSK_Solutions_Logo.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Title.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+            <state relative-caret-position="364">
+              <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -39,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2716">
+            <state relative-caret-position="1400">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
@@ -48,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+            <state relative-caret-position="756">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -60,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/ImageArea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+            <state relative-caret-position="168">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -73,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
-              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -105,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Avatar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="532">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -117,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="476">
               <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -129,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="308">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -196,15 +189,15 @@
         <option value="$PROJECT_DIR$/src/components/App/App2.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" />
-        <option value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
-        <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" />
-        <option value="$PROJECT_DIR$/src/components/SocialCard/Logo.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Title.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" />
-        <option value="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" />
+        <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" />
+        <option value="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
+        <option value="$PROJECT_DIR$/src/components/SocialCard/Logo.js" />
       </list>
     </option>
   </component>
@@ -212,8 +205,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="454" />
-    <option name="y" value="21" />
+    <option name="x" value="2802" />
+    <option name="y" value="9" />
     <option name="width" value="1025" />
     <option name="height" value="1034" />
   </component>
@@ -225,7 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,15 +258,17 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Bowling" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\projects\bowling_practice\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -311,19 +305,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Jest.SocialCard.test.js">
-    <configuration name="InputArea" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/components.test.js" />
-      <test-names>
-        <test-name value="InputArea" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="SocialCard" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -347,19 +328,6 @@
       <test-file value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
       <method v="2" />
     </configuration>
-    <configuration name="SodaListContainer" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/components.test.js" />
-      <test-names>
-        <test-name value="SodaListContainer" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="components.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -370,13 +338,33 @@
       <test-file value="$PROJECT_DIR$/src/__tests__/components.test.js" />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.SocialCard.test.js" />
         <item itemvalue="Jest.SocialCard" />
         <item itemvalue="Jest.components.test.js" />
-        <item itemvalue="Jest.InputArea" />
-        <item itemvalue="Jest.SodaListContainer" />
       </list>
     </recent_temporary>
   </component>
@@ -394,7 +382,9 @@
       <workItem from="1550946269243" duration="11281000" />
       <workItem from="1554010267962" duration="80000" />
       <workItem from="1554010422619" duration="125000" />
-      <workItem from="1554010562339" duration="103908000" />
+      <workItem from="1554010562339" duration="104148000" />
+      <workItem from="1554678116509" duration="39000" />
+      <workItem from="1554678265538" duration="3387000" />
     </task>
     <servers />
   </component>
@@ -431,15 +421,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201529000" />
+    <option name="totallyTimeSpent" value="205195000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="npm" order="0" sideWeight="0.50460595" side_tool="true" weight="0.21223404" />
+      <window_info id="npm" order="0" sideWeight="0.5057971" side_tool="true" visible="true" weight="0.15851064" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49539405" visible="true" weight="0.21223404" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4942029" visible="true" weight="0.15851064" />
       <window_info id="Structure" order="3" weight="0.249742" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32958034" />
@@ -677,9 +666,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TSK_Solutions_Logo.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TSK_Solutions_Logo.bmp" />
     <entry file="file://$PROJECT_DIR$/../ravenous/src/components/Business/Business.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -798,20 +785,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1400">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Title.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Avatar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -820,7 +811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="476">
           <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -828,57 +819,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="308">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2716">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="588">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+        <state relative-caret-position="364">
+          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/ImageArea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+        <state relative-caret-position="168">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Avatar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Title.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" selection-start-line="1" selection-end-line="2" />
         </state>
       </provider>
     </entry>

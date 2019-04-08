@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import "./SocialCard.css";
 import Avatar from "./Avatar";
-import Logo from "./Logo";
+import { Logo } from "./Logo";
 import Title from "./Title";
 
 class ImageArea extends Component {
@@ -11,8 +11,7 @@ class ImageArea extends Component {
 			<div className={this.props.layoutInner + ' card'} style={{backgroundColor: 'orange'}}>
 				<Logo
 					location={'item1'}
-					imgLogo={this.props.imgLogo}
-					altImgLogo={this.props.altImgLogo}
+					logo={this.props.logo}
 				/>
 				<Title
 					location={'item2'}
@@ -31,8 +30,7 @@ class ImageArea extends Component {
 
 ImageArea.propTypes = {
 	layoutInner: PropTypes.string,
-	imgLogo: PropTypes.string,
-	altImgLogo: PropTypes.string,
+	logo: PropTypes.object,
 	title: PropTypes.string,
 	picture: PropTypes.string,
 	altPicture: PropTypes.string

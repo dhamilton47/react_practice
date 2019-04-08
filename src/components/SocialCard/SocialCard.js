@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import ImageArea from './ImageArea'
 import TextArea from "./TextArea";
 import './SocialCard.css';
-import logo from '../../images/TSKSolutionsLogo.bmp';
-import picture from '../../../src/images/djh.jpeg'
+import tsk from '../../images/TSKSolutionsLogo.bmp';
+import djh from '../../../src/images/djh.jpeg'
 
 const SocialCardData = {
 	layoutOuter: 'social-card-tb',
-	imgLogo: logo,
-	altImgLogo: 'TSK Solutions Logo',
-	picture: picture,
+	logo: {
+		src: tsk,
+		alt: 'TSK Solutions Logo'
+	},
+	picture: djh,
 	altPicture: 'Dan J. Hamilton',
 	title: 'Learning React? Start Small.',
 	blurbText: 'Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps.',
@@ -22,8 +24,7 @@ class SocialCard extends Component {
 			<div className={SocialCardData.layoutOuter}>
 				<ImageArea
 					layoutInner={SocialCardData.layoutOuter === 'social-card-tb' ? 'top' : 'left'}
-					imgLogo={SocialCardData.imgLogo}
-					altImgLogo={SocialCardData.altImgLogo}
+					logo={SocialCardData.logo}
 					title={SocialCardData.title}
 					picture={SocialCardData.picture}
 					altPicture={SocialCardData.altPicture}

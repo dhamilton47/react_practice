@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import SocialCard from '../components/SocialCard/SocialCard';
 import ImageArea from '../components/SocialCard/ImageArea';
 import TextArea from '../components/SocialCard/TextArea';
-import Logo from '../components/SocialCard/Logo';
+import { Logo } from '../components/SocialCard/Logo';
 import Title from '../components/SocialCard/Title';
 import Avatar from '../components/SocialCard/Avatar';
 import Blurb from '../components/SocialCard/Blurb';

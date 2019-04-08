@@ -11,7 +11,7 @@ import { Logo } from '../components/SocialCard/Logo';
 import Title from '../components/SocialCard/Title';
 import { Avatar } from '../components/SocialCard/Avatar';
 import Blurb from '../components/SocialCard/Blurb';
-import SiteLink from '../components/SocialCard/SiteLink';
+import { SiteLink } from '../components/SocialCard/SiteLink';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('SocialCard', () => {

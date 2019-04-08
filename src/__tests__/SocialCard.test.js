@@ -9,7 +9,7 @@ import ImageArea from '../components/SocialCard/ImageArea';
 import TextArea from '../components/SocialCard/TextArea';
 import { Logo } from '../components/SocialCard/Logo';
 import Title from '../components/SocialCard/Title';
-import Avatar from '../components/SocialCard/Avatar';
+import { Avatar } from '../components/SocialCard/Avatar';
 import Blurb from '../components/SocialCard/Blurb';
 import SiteLink from '../components/SocialCard/SiteLink';
 Enzyme.configure({ adapter: new Adapter() });

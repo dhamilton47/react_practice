@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './SocialCard.css';
 
-class Avatar extends Component {
-	render() {
-		return (
-			<div className={this.props.location}>
-				<span className="image-container"	>
-					<span className="avatar-name">{this.props.altPicture}</span>
-					<img src={this.props.picture} alt={this.props.altPicture}/>
-				</span>
-			</div>
-		);
-	}
-}
-
-Avatar.propTypes = {
-	location: PropTypes.string,
-	picture: PropTypes.string,
-	altPicture: PropTypes.string
+export const Avatar = props => {
+	return (
+		<div className={props.location}>
+			<span className="image-container"	>
+				<span className="avatar-name">{props.picture.alt}</span>
+				<img src={props.picture.src} alt={props.picture.alt}/>
+			</span>
+		</div>
+	);
 };
 
-export default Avatar;
+Avatar.propTypes = {
+	location: PropTypes.string.isRequired,
+	picture: PropTypes.shape({
+		src: PropTypes.string.isRequired,
+		alt: PropTypes.string.isRequired
+	})
+};

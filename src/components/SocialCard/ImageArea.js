@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import "./SocialCard.css";
-import Avatar from "./Avatar";
+import { Avatar } from "./Avatar";
 import { Logo } from "./Logo";
 import Title from "./Title";
 
@@ -21,7 +21,6 @@ class ImageArea extends Component {
 				<Avatar
 					location={'item3'}
 					picture={this.props.picture}
-					altPicture={this.props.altPicture}
 				/>
 			</div>
 		)
@@ -32,8 +31,7 @@ ImageArea.propTypes = {
 	layoutInner: PropTypes.string,
 	logo: PropTypes.object,
 	title: PropTypes.string,
-	picture: PropTypes.string,
-	altPicture: PropTypes.string
+	picture: PropTypes.object,
 };
 
 export default ImageArea;

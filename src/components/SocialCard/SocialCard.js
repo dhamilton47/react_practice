@@ -11,8 +11,10 @@ const SocialCardData = {
 		src: tsk,
 		alt: 'TSK Solutions Logo'
 	},
-	picture: djh,
-	altPicture: 'Dan J. Hamilton',
+	picture: {
+		src: djh,
+		alt: 'Dan J. Hamilton'
+	},
 	title: 'Learning React? Start Small.',
 	blurbText: 'Can\'t pry yourself away from the tutorials? The cure is to make tiny little experiment apps.',
 	siteLink: 'dev.to'
@@ -27,7 +29,6 @@ class SocialCard extends Component {
 					logo={SocialCardData.logo}
 					title={SocialCardData.title}
 					picture={SocialCardData.picture}
-					altPicture={SocialCardData.altPicture}
 				/>
 				<TextArea
 					layoutInner={SocialCardData.layoutOuter === 'social-card-tb' ? 'bottom' : 'right'}

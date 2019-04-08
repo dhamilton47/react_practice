@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './SocialCard.css';
 
-class Blurb extends Component {
-
-	render() {
-		return (
-			<div className={this.props.location}>
-				<p>
-					{this.props.text}
-				</p>
-			</div>
-		);
-	}
-}
+export const Blurb = props => {
+	return (
+		<div className={props.location}>
+			<p>
+				{props.text}
+			</p>
+		</div>
+	);
+};
 
 Blurb.propTypes = {
 	location: PropTypes.string,
 	text: PropTypes.string
 };
-
-export default Blurb;

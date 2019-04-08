@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="532">
+              <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -63,8 +63,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="504">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -117,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="420">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -184,13 +187,13 @@
         <option value="$PROJECT_DIR$/src/components/App/App2.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Title.js" />
-        <option value="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Logo.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" />
+        <option value="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" />
         <option value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
       </list>
@@ -373,7 +376,7 @@
       <workItem from="1554010422619" duration="125000" />
       <workItem from="1554010562339" duration="104148000" />
       <workItem from="1554678116509" duration="39000" />
-      <workItem from="1554678265538" duration="6119000" />
+      <workItem from="1554678265538" duration="6489000" />
     </task>
     <servers />
   </component>
@@ -410,7 +413,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207927000" />
+    <option name="totallyTimeSpent" value="208297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -774,16 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Title.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -840,8 +833,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="420">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -850,15 +853,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="532">
+          <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

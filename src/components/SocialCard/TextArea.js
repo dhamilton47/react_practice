@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import "./SocialCard.css";
 import { SiteLink } from './SiteLink';
-import Blurb from './Blurb';
+import { Blurb } from './Blurb';
 import Title from './Title';
 
 class TextArea extends Component {

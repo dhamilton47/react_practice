@@ -4,15 +4,12 @@ import './SocialCard.css';
 
 export const SiteLink = props => {
 	return (
-		<div className={props.location}>
-			<p style={{color: 'darkgray'}}>
-				{props.site}
-			</p>
-		</div>
+		<p style={{color: 'darkgray'}}>
+			{props.site}
+		</p>
 	);
 };
 
 SiteLink.propTypes = {
-	location: PropTypes.string,
 	site: PropTypes.string
 };

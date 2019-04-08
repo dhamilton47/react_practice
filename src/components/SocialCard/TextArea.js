@@ -6,25 +6,19 @@ import { Blurb } from './Blurb';
 import { Title } from './Title';
 
 export  const TextArea = props => {
-
-		return (
-			<div className={props.layoutInner + ' card'}>
-				<Title
-					location={'item1'}
-					appearance={'title-sm'}
-					title={props.title}
-				/>
-				<Blurb
-					location={'item2'}
-					text={props.blurbText}
-				/>
-				<SiteLink
-					location={'item3'}
-					site={props.siteLink}
-				/>
+	return (
+		<div className={props.layoutInner + ' card'}>
+			<div className="item1">
+				<Title appearance={'title-sm'} title={props.title} />
 			</div>
-		);
-
+			<div className="item2">
+				<Blurb text={props.blurbText} />
+			</div>
+			<div className="item3">
+				<SiteLink site={props.siteLink} />
+			</div>
+		</div>
+	);
 };
 
 TextArea.propTypes = {

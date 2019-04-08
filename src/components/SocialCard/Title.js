@@ -4,16 +4,13 @@ import './SocialCard.css';
 
 export const Title = props =>{
 	return (
-		<div className={props.location}>
-			<div className={props.appearance}>
-				{props.title}
-			</div>
+		<div className={props.appearance}>
+			{props.title}
 		</div>
 	);
 };
 
 Title.propTypes = {
-	location: PropTypes.string,
 	appearance: PropTypes.string,
 	title: PropTypes.string
 };

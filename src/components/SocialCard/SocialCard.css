@@ -22,7 +22,7 @@ html {
             'top'
             'bottom';
     margin: auto;
-    max-width: 600px;
+    max-width: 300px;
     padding: 0;
     text-align: left;
 }
@@ -65,6 +65,7 @@ html {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     grid-area: top;
+    grid-template-rows: 48px 1fr 50px;
     margin: 0;
 }
 
@@ -114,29 +115,29 @@ h1 {
 
 /* Reusable Component - Image Container */
 
-.image-container {
-    text-align: right;
-    box-sizing: content-box;
-    background-color: #fff;
+.avatar-container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    height: 40px;
     justify-content: flex-end;
     overflow: hidden;
-    margin: 0;
-    padding: 3px;
 }
 
-.image-container img {
+.avatar-container img {
     height: 32px;
 }
 
 /* Component Specific Styles */
 
 .avatar-name {
+    box-sizing: border-box;
     color: orange;
+    display: inline-flex;
     font-family: Cambria, sans-serif;
     font-weight: bold;
-    padding: 7px;
+    margin-bottom: 6px;
+    padding: 0 7px;
     text-align: center;
     vertical-align: middle;
 }
@@ -162,4 +163,7 @@ h1 {
 
 p {
     padding: 5px;
+}
+span {
+    height: 32px;
 }

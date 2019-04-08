@@ -5,10 +5,12 @@ import './SocialCard.css';
 export const Avatar = props => {
 	return (
 		<div className={props.location}>
-			<span className="image-container"	>
-				<span className="avatar-name">{props.picture.alt}</span>
-				<img src={props.picture.src} alt={props.picture.alt}/>
-			</span>
+			<div className="avatar-container"	>
+				<div style={{padding: '4px', backgroundColor: 'white'}}>
+					<span className="avatar-name">{props.picture.alt}</span>
+					<img src={props.picture.src} alt={props.picture.alt}/>
+				</div>
+			</div>
 		</div>
 	);
 };

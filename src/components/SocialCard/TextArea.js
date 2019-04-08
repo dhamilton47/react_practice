@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import "./SocialCard.css";
 import { SiteLink } from './SiteLink';
 import { Blurb } from './Blurb';
 import { Title } from './Title';
 
-class TextArea extends Component {
-	render() {
+export  const TextArea = props => {
+
 		return (
-			<div className={this.props.layoutInner + ' card'}>
+			<div className={props.layoutInner + ' card'}>
 				<Title
 					location={'item1'}
 					appearance={'title-sm'}
-					title={this.props.title}
+					title={props.title}
 				/>
 				<Blurb
 					location={'item2'}
-					text={this.props.blurbText}
+					text={props.blurbText}
 				/>
 				<SiteLink
 					location={'item3'}
-					site={this.props.siteLink}
+					site={props.siteLink}
 				/>
 			</div>
-		)
-	}
-}
+		);
+
+};
 
 TextArea.propTypes = {
 	layoutInner: PropTypes.string,
@@ -33,5 +33,3 @@ TextArea.propTypes = {
 	blurbText: PropTypes.string,
 	siteLink: PropTypes.string
 };
-
-export default TextArea;

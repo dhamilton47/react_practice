@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ImageArea from './ImageArea'
-import TextArea from "./TextArea";
+import { TextArea } from "./TextArea";
 import './SocialCard.css';
 import tsk from '../../images/TSKSolutionsLogo.bmp';
 import djh from '../../../src/images/djh.jpeg'

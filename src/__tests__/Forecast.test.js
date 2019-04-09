@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import ReactDom from 'react-dom';
 import Forecast from '../components/Forecast/Forecast';
-import Day from '../components/Forecast/Day';
+import { Day } from '../components/Forecast/Day';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Forecast', () => {

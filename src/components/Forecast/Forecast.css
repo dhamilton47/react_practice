@@ -1,0 +1,113 @@
+/* Universal Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+    height: 100%;
+}
+
+html {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.card-container {
+    border-top: lightgray solid 1px;
+    border-left: lightgray solid 1px;
+    border-bottom: lightgray solid 1px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Work Sans', sans-serif;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 501px
+    /*text-align: left;*/
+}
+
+.card {
+    border-right: lightgrey solid 1px;
+    display: grid;
+    font-family: 'Work Sans', sans-serif;
+    grid-template-areas:
+            'item1'
+            'item2'
+            'item3';
+    margin: 0;
+    width: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.item1, .item2, .item3 {
+/*    border: red solid 1px;  */
+    padding: 5px;
+}
+
+.item1 { grid-area: item1; }
+
+.item2 { grid-area: item2; }
+
+.item3 { grid-area: item3; }
+
+/* Reusable Component - Image Container */
+
+.avatar-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.avatar-container img {
+    height: 32px;
+}
+
+/* Component Specific Styles */
+
+.avatar-name {
+    box-sizing: border-box;
+    color: orange;
+    display: inline-flex;
+    font-family: Cambria, sans-serif;
+    font-weight: bold;
+    margin-bottom: 6px;
+    padding: 0 7px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.logo {
+    text-align: left;
+}
+
+.title-lg {
+    font-size: 2.375rem;
+    font-weight: normal;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.title-sm {
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 20px 5px 0 5px;
+    vertical-align: text-bottom;
+}
+
+p {
+    padding: 5px;
+}
+span {
+    height: 32px;
+}

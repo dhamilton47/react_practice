@@ -6,18 +6,7 @@ class GameContainer extends Component {
 		return (
 			<div className="game">
 				Game Panel
-				<Game
-					gameID={1}
-					player={this.props.players[0]}
-				/>
-				<Game
-					gameID={2}
-					player={this.props.players[1]}
-				/>
-				<Game
-					gameID={3}
-					player={this.props.players[2]}
-				/>
+				{this.props.roster.players.map(player => <Game key={player} gameId={player} player={player}/>)}
 			</div>
 		);
 	}

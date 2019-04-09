@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameScoringContainer.css';
-import {ScoringByPinFall} from '../ScoringByPinFall/ScoringByPinFall';
-import {ScoringByNumberPad} from '../ScoringByNumberPad/ScoringByNumberPad';
+import { ScoringByPinFall } from '../ScoringByPinFall/ScoringByPinFall';
+import { ScoringByNumberPad } from '../ScoringByNumberPad/ScoringByNumberPad';
 
 export const GameScoringContainer = () => {
 	return (
@@ -13,4 +13,4 @@ export const GameScoringContainer = () => {
 			</div>
 		</div>
 	);
-}
+};

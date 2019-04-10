@@ -1,0 +1,55 @@
+/* Universal Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+    height: 100%;
+}
+
+html {
+    font-size: 26px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.calculator{
+    border: black solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 150px;
+    width: 204px;
+}
+
+/* Component Specific Styles */
+
+.display {
+    border-bottom: buttonface outset 1px;
+    height: 50px;
+    text-align: right;
+    padding: 11px;
+    width: 200px;
+}
+
+button {
+    color: black;
+    /*    display: inline-flex; */
+    font-family: Cambria, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    height: 50px;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+}
+.btn-sm { width: 50px; }
+
+.btn-md { width: 100px; }
+
+.btn-lg { width: 150px; }

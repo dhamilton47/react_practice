@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class NumberKey extends Component {
+class NumberKey1 extends Component {
 	render() {
 		return (
 			<button
-				type="button"
 				className={this.props.styling}
-				onClick={this.props.onClick}
+				onSubmit={this.props.onClick}
 			>
 				{this.props.value}
 			</button>
 		);
 	}
 }
-/*
-NumberKey.propTypes = {
+
+NumberKey1.propTypes = {
 	onClick: PropTypes.func.isRequired
 };
-*/
-export default NumberKey;
+
+export default NumberKey1;

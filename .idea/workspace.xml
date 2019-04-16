@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SocialCard/ImageArea2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Avatar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SiteLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/Title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/Calculator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/Calculator.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Calculator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Display.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,28 +21,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
+        <entry file="file://$PROJECT_DIR$/src/__tests__/Calculator.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-224">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="336">
+              <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="122" column="30" lean-forward="true" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="-1563">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -51,11 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Calculator/NumberKey.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Calculator/FunctionKey.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -70,33 +72,18 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>displayText</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Frame/Frame.js" />
-        <option value="$PROJECT_DIR$/src/__tests__/Frame.test.js" />
-        <option value="$PROJECT_DIR$/src/components/Match/Match.css" />
-        <option value="$PROJECT_DIR$/src/components/Match/Match.js" />
-        <option value="$PROJECT_DIR$/src/components/GameTotal/GameTotal.css" />
-        <option value="$PROJECT_DIR$/src/components/Games/Games.js" />
-        <option value="$PROJECT_DIR$/src/components/ScoringContainer/ScoringContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/GameScoringCenter/GameScoringCenter.js" />
-        <option value="$PROJECT_DIR$/src/components/MatchScoringContainer/MatchScoringContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/StatContainer/StatsContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/StatsContainer/StatsContainer.css" />
-        <option value="$PROJECT_DIR$/src/components/StatsContainer/StatsContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/Settings/Settings.css" />
-        <option value="$PROJECT_DIR$/src/components/Settings/Settings.js" />
-        <option value="$PROJECT_DIR$/src/components/Bowler/Bowler.css" />
-        <option value="$PROJECT_DIR$/src/components/Frames/Frames.css" />
-        <option value="$PROJECT_DIR$/src/components/Ball/Ball.css" />
-        <option value="$PROJECT_DIR$/src/components/Game/Game.css" />
-        <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/src/__tests__/Match.test.js" />
-        <option value="$PROJECT_DIR$/src/__tests__/App.test.js" />
         <option value="$PROJECT_DIR$/src/__tests__/Game.test.js" />
         <option value="$PROJECT_DIR$/src/components/GameContainer/GameContainer.js" />
         <option value="$PROJECT_DIR$/src/components/Bowler/Bowler.js" />
@@ -108,17 +95,14 @@
         <option value="$PROJECT_DIR$/src/components/Ball/Ball.js" />
         <option value="$PROJECT_DIR$/src/components/Ball/Ball2.js" />
         <option value="$PROJECT_DIR$/src/__tests__/Ball2.test.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/dave/components/InputArea.js" />
         <option value="$PROJECT_DIR$/src/components/dave/components/SodaList.js" />
         <option value="$PROJECT_DIR$/src/components/dave/components/SodaListContainer.js" />
         <option value="$PROJECT_DIR$/src/__tests__/components.test.js" />
         <option value="$PROJECT_DIR$/src/components/App/App.css" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/TagLine.js" />
-        <option value="$PROJECT_DIR$/src/components/App/App2.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
-        <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/ImageArea.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Blurb.js" />
@@ -127,6 +111,29 @@
         <option value="$PROJECT_DIR$/src/components/SocialCard/Logo.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/Title.js" />
         <option value="$PROJECT_DIR$/src/components/SocialCard/TextArea.js" />
+        <option value="$PROJECT_DIR$/src/components/SocialCard/SocialCard.js" />
+        <option value="$PROJECT_DIR$/src/components/App/App2.js" />
+        <option value="$PROJECT_DIR$/src/components/Forecast/Forecast.css" />
+        <option value="$PROJECT_DIR$/src/__tests__/Forecast.test.js" />
+        <option value="$PROJECT_DIR$/src/components/Forecast/Day.js" />
+        <option value="$PROJECT_DIR$/src/components/Forecast/Forecast.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/App.test.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/ScoringByPinFall.test.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/ScoringContainer.test.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/ScoringByNumberPad.test.js" />
+        <option value="$PROJECT_DIR$/src/components/Bowling/GameScoringContainer/GameScoringContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/Bowling/Bowling.js" />
+        <option value="$PROJECT_DIR$/src/components/Bowling/GameContainer/GameContainer.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/Bowling.test.js" />
+        <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/Calculator.css" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/Display.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/NumberKey1.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/Calculator.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/Calculator.test.js" />
       </list>
     </option>
   </component>
@@ -168,7 +175,20 @@
               <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
               <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Calculator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
@@ -187,7 +207,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/SocialCard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Calculator" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -200,19 +220,19 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\bowling_practice\src\components\SocialCard" />
-      <recent name="C:\projects\bowling_practice\src\images" />
-      <recent name="C:\projects\bowling_practice\public" />
-      <recent name="C:\projects\bowling_practice\src\components\App" />
-      <recent name="C:\projects\bowling_practice\src\components\Ball" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\bowling_practice\src\components\Bowling" />
       <recent name="C:\projects\bowling_practice\src\components\SocialCard" />
       <recent name="C:\projects\bowling_practice\src\__tests__" />
       <recent name="C:\projects\bowling_practice\src\components\App" />
       <recent name="C:\projects\bowling_practice\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\bowling_practice\src\components\Calculator" />
+      <recent name="C:\projects\bowling_practice\src\components\Bowling" />
+      <recent name="C:\projects\bowling_practice\src\components\SocialCard" />
+      <recent name="C:\projects\bowling_practice\src\images" />
+      <recent name="C:\projects\bowling_practice\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -227,38 +247,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.SocialCard.test.js">
-    <configuration name="SocialCard" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
-      <test-names>
-        <test-name value="SocialCard" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="SocialCard.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Calculator.test.js">
+    <configuration name="Calculator.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/SocialCard.test.js" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Calculator.test.js" />
       <method v="2" />
     </configuration>
-    <configuration name="components.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Forecast.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/components.test.js" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Forecast.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -285,9 +302,9 @@
       <list>
         <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
-        <item itemvalue="Jest.SocialCard.test.js" />
-        <item itemvalue="Jest.SocialCard" />
-        <item itemvalue="Jest.components.test.js" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="Jest.Calculator.test.js" />
+        <item itemvalue="Jest.Forecast.test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -307,52 +324,55 @@
       <workItem from="1554010422619" duration="125000" />
       <workItem from="1554010562339" duration="104148000" />
       <workItem from="1554678116509" duration="39000" />
-      <workItem from="1554678265538" duration="19516000" />
+      <workItem from="1554678265538" duration="64849000" />
+      <workItem from="1554902192219" duration="40348000" />
+      <workItem from="1555163366316" duration="27626000" />
+      <workItem from="1555355589340" duration="10949000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 40m 59s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 41m 28s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 41m 48s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 43m 42s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 44m 32s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 44m 54s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 15h 48m 06s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="SocialCard_test_js - 2019.04.07 at 16h 00m 06s.xml">
-      <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="SocialCard_test_js - 2019.04.07 at 16h 07m 03s.xml">
       <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
     <history-entry file="SocialCard_test_js - 2019.04.07 at 16h 07m 35s.xml">
       <configuration name="SocialCard.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Forecast - 2019.04.08 at 02h 19m 43s.xml">
+      <configuration name="Forecast" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Forecast_test_js - 2019.04.08 at 02h 20m 05s.xml">
+      <configuration name="Forecast.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Forecast_test_js - 2019.04.09 at 00h 33m 09s.xml">
+      <configuration name="Forecast.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Forecast_test_js - 2019.04.09 at 00h 34m 09s.xml">
+      <configuration name="Forecast.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Calculator_test_js - 2019.04.09 at 14h 59m 25s.xml">
+      <configuration name="Calculator.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Calculator_test_js - 2019.04.09 at 15h 27m 15s.xml">
+      <configuration name="Calculator.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Calculator_test_js - 2019.04.09 at 15h 28m 30s.xml">
+      <configuration name="Calculator.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Calculator_test_js - 2019.04.09 at 15h 37m 15s.xml">
+      <configuration name="Calculator.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221324000" />
+    <option name="totallyTimeSpent" value="345580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2818" y="6" width="1025" height="1034" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" order="0" sideWeight="0.5057971" side_tool="true" weight="0.15851064" />
+      <window_info id="npm" order="0" sideWeight="0.51047903" side_tool="true" visible="true" weight="0.23116615" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4942029" visible="true" weight="0.30753353" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.48952097" visible="true" weight="0.23116615" />
       <window_info id="Structure" order="3" weight="0.249742" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32958034" />
@@ -361,7 +381,7 @@
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32879582" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.30052355" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.30052355" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39895287" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -369,7 +389,7 @@
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.249742" />
     </layout>
     <layout-to-restore>
       <window_info id="npm" order="0" sideWeight="0.50445104" side_tool="true" weight="0.21259029" />
@@ -397,331 +417,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Forecast/Forecast.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Bowler/Bowler.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Ball/Ball.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/ScoringByNumberPad.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/ScoringByNumberPad/ScoringByNumberPad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2352">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/Match.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Bowler/Bowler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/Game.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/Frames.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/Ball.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Ball/Ball2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/Ball2.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="17" lean-forward="true" selection-start-line="11" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Ball/Ball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="27" column="14" selection-start-line="27" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dave/components/InputArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dave/components/SodaListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/components.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/dave/components/SodaList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/wamp_old/www/sandbox/bio2/css/styles_layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912" />
-      </provider>
-    </entry>
-    <entry file="file://C:/wamp_old/www/sandbox/bio2/css/styles_main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2130" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" selection-start-line="15" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TSK_Solutions_Logo.bmp" />
-    <entry file="file://$PROJECT_DIR$/../ravenous/src/components/Business/Business.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ravenous/src/util/Yelp.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ravenous/src/components/Business/Business.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ravenous/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="48" column="14" lean-forward="true" selection-end-line="49" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Frames/Frames.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Frames/Frames.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Game/Game.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Game/Game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/MatchScoringContainer/MatchScoringContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameTotal/GameTotal.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameTotal/GameTotal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameScoringContainer/GameScoringContainer.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameScoringContainer/GameScoringContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameContainer/GameContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ravenous/public/index.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="122" column="30" lean-forward="true" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/ImageArea.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -733,13 +448,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/Blurb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
@@ -770,6 +478,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/StatsContainer/StatsContainer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/StatsContainer/StatsContainer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Forecast/Forecast.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -780,10 +508,285 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/TextArea.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SocialCard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="168">
+          <caret line="123" lean-forward="true" selection-start-line="122" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/SocialCard.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Forecast/Day.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Match.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Game.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Frames.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Ball.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Forecast/Forecast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#191#253#0" />
+            <element signature="e#256#318#0" />
+            <element signature="e#321#383#0" />
+            <element signature="e#386#448#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-960">
+          <caret line="16" selection-start-line="15" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App2.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/ScoringByPinFall.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/ScoringContainer.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/__tests__/ScoringByNumberPad.test.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/ScoringByNumberPad/ScoringByNumberPad.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/MatchScoringContainer/MatchScoringContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameScoringContainer/GameScoringContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/ScoringByPinFall/ScoringByPinFall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="88" column="24" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="88" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameTotal/GameTotal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Bowling.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#2906#3294#0" />
+            <element signature="e#3898#4453#0" />
+            <element signature="e#4482#5063#0" />
+            <element signature="e#5152#5563#0" />
+            <element signature="e#5049#5430#0" />
+            <element signature="e#5273#5426#0" />
+            <element signature="e#6025#6392#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Bowling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameContainer/GameContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Game/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Frames/Frames.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Bowling/Ball/Ball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Forecast.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/components.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SocialCard/SiteLink.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/Display.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/NumberKey1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/NumberKey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/FunctionKey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/Calculator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1563">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

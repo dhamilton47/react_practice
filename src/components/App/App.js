@@ -5,7 +5,8 @@ import './App.css';
 //import SodaListContainer from '../SodaListContainer/'SodaListContainer;
 //import SocialCard from '../SocialCard/SocialCard';
 //import Forecast from "../Forecast/Forecast";
-import Calculator from '../Calculator/Calculator';
+//import Calculator from '../Calculator/Calculator';
+import HackerNewsSearch from '../HackerNewsSearch/HackerNewsSearch';
 
 class App extends Component {
 	render() {
@@ -14,7 +15,8 @@ class App extends Component {
 			//<SodaListContainer/>
 			//<SocialCard/>
 			//<Forecast/>
-			<Calculator/>
+			//<Calculator/>
+			<HackerNewsSearch/>
 		)
 	}
 }

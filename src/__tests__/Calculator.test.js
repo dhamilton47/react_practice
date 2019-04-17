@@ -8,7 +8,6 @@ import Calculator from '../components/Calculator/Calculator';
 import Display from '../components/Calculator/Display';
 import FunctionKey from '../components/Calculator/FunctionKey';
 import NumberKey from '../components/Calculator/NumberKey';
-import NumberKey1 from '../components/Calculator/NumberKey1';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -49,7 +49,7 @@ class Calculator extends Component {
 		}
 
 		if (nEF) this.setState({newEntryFlag: false});
-		this.diagnostics(value);
+//		this.diagnostics(value);
 	}
 
 	handleFunction(value) {
@@ -125,7 +125,7 @@ class Calculator extends Component {
 //				displayText: ''
 			});
 		}
-		this.diagnostics(value);
+//		this.diagnostics(value);
 	/*
 		this.setState({
 			pendingFunction: (this.state.pendingFunction).concat(value),

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/HackerNewsSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HackerNewsSearch/HackerNewsSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/__tests__/Calculator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/Calculator.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calculator/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Calculator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Display.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/__tests__/Calculator.test.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/__tests__/HackerNewsSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+            <state relative-caret-position="440">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -32,32 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1563">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Calculator/NumberKey.js">
+        <entry file="file://$PROJECT_DIR$/src/components/HackerNewsSearch/HackerNewsSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Calculator/FunctionKey.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="224">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -68,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="tsconfig.json" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -83,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/__tests__/Match.test.js" />
-        <option value="$PROJECT_DIR$/src/__tests__/Game.test.js" />
         <option value="$PROJECT_DIR$/src/components/GameContainer/GameContainer.js" />
         <option value="$PROJECT_DIR$/src/components/Bowler/Bowler.js" />
         <option value="$PROJECT_DIR$/src/components/GameTotal/GameTotal.js" />
@@ -125,15 +102,17 @@
         <option value="$PROJECT_DIR$/src/components/Bowling/Bowling.js" />
         <option value="$PROJECT_DIR$/src/components/Bowling/GameContainer/GameContainer.js" />
         <option value="$PROJECT_DIR$/src/__tests__/Bowling.test.js" />
-        <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/Calculator/Calculator.css" />
         <option value="$PROJECT_DIR$/src/components/Calculator/Display.js" />
         <option value="$PROJECT_DIR$/src/components/Calculator/NumberKey1.js" />
         <option value="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" />
         <option value="$PROJECT_DIR$/src/components/Calculator/FunctionKey.js" />
-        <option value="$PROJECT_DIR$/src/components/Calculator/Calculator.js" />
         <option value="$PROJECT_DIR$/src/__tests__/Calculator.test.js" />
+        <option value="$PROJECT_DIR$/src/components/Calculator/Calculator.js" />
+        <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/src/components/HackerNewsSearch/HackerNewsSearch.js" />
+        <option value="$PROJECT_DIR$/src/__tests__/HackerNewsSearch.js" />
       </list>
     </option>
   </component>
@@ -188,7 +167,21 @@
               <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bowling_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerNewsSearch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bowling_practice" type="b2602c69:ProjectViewProjectNode" />
@@ -327,7 +320,7 @@
       <workItem from="1554678265538" duration="64849000" />
       <workItem from="1554902192219" duration="40348000" />
       <workItem from="1555163366316" duration="27626000" />
-      <workItem from="1555355589340" duration="10949000" />
+      <workItem from="1555355589340" duration="14195000" />
     </task>
     <servers />
   </component>
@@ -364,11 +357,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345580000" />
+    <option name="totallyTimeSpent" value="348826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2818" y="6" width="1025" height="1034" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" order="0" sideWeight="0.51047903" side_tool="true" visible="true" weight="0.23116615" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -429,15 +421,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameTotal/GameTotal.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Bowling/GameScoringContainer/GameScoringContainer.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ravenous/public/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SocialCard/ImageArea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -693,26 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__tests__/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -770,10 +733,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HackerNewsSearch/HackerNewsSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/__tests__/Calculator.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="146" column="44" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+        <state relative-caret-position="-812">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -782,10 +775,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Calculator/Calculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1563">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="3556">
+          <caret line="127" column="2" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__tests__/HackerNewsSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

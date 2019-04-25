@@ -1,0 +1,1912 @@
+<html ng-app="HNSearch" class="ng-scope gr__hn_algolia_com">
+	<head ng-controller="HeadCtrl" class="ng-scope">
+		<style type="text/css">
+			@charset "UTF-8";
+			[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}
+			ng\:form{display:block;}
+			.ng-animate-shim{visibility:hidden;}
+			.ng-anchor{position:absolute;}
+		</style>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui" name="viewport">
+		<title>HN Search powered by Algolia</title>
+		<meta content="Hacker News Search, millions articles and comments at your fingertips." name="description">
+		<base href="https://hn.algolia.com/">
+		<link href="https://d3nb9u6x572n0.cloudfront.net/assets/favicon-f54903568e0e9777f2e4db164b19e76ac961d1c283d9dbbff6cc8276188e5179.ico" rel="shortcut icon">
+		<link href="/opensearch.xml" rel="search" title="HN Search" type="application/opensearchdescription+xml">
+		<link rel="stylesheet" media="all" href="https://d3nb9u6x572n0.cloudfront.net/assets/application-1401ae30fef9f5b589593b5cdaf5b1fd20948d7be3c50ef9e2af91293df0520f.css">
+<!-- ngIf: settings.style !== "experimental" -->
+		<link rel="stylesheet" media="all" href="https://d3nb9u6x572n0.cloudfront.net/assets/themes/default-3ecdf06ceb6ca6ccbe1d52b014697a92254823c1a5bcb55f0a0fbfa79a282b6d.css" ng-if="settings.style !== &quot;experimental&quot;" class="ng-scope">
+<!-- end ngIf: settings.style !== "experimental" -->
+<!-- ngIf: settings.style === "experimental" -->
+		<!-- = csrf_meta_tags -->
+		<link rel="alternate" type="application/rss+xml" title="HN Front page" href="https://hn.algolia.com/rss">
+		<link rel="alternate" type="application/atom+xml" title="Latest HN items" href="https://hn.algolia.com/latest.atom">
+		<meta content="summary" name="twitter:card">
+		<meta content="@algolia" name="twitter:site">
+		<meta content="HN Search powered by Algolia" name="twitter:title">
+		<meta content="Hacker News Search, millions articles and comments at your fingertips." name="twitter:description">
+		<meta content="https://d3nb9u6x572n0.cloudfront.net/yc-logo.png" name="twitter:image:src">
+		<meta content="algolia.com" name="twitter:domain">
+		<meta content="HN Search powered by Algolia" property="st:title">
+		<meta content="https://hn.algolia.com/?sort=byPopularity&amp;prefix&amp;page=0&amp;dateRange=all&amp;type=story&amp;query=" property="og:url">
+		<meta content="HN Search" property="og:site_name">
+		<meta content="HN Search powered by Algolia" property="og:title">
+		<meta content="Hacker News Search, millions articles and comments at your fingertips." property="og:description">
+		<meta content="https://d3nb9u6x572n0.cloudfront.net/yc-logo.png" property="og:image">
+		<meta content="600" property="og:image:width">
+		<meta content="315" property="og:image:height">
+
+		<script async="" src="//www.google-analytics.com/analytics.js"></script>
+		<script async="" src="https://cdn.jsdelivr.net/npm/search-insights@0.0.14/dist/search-insights.min.js"></script>
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['AlgoliaAnalyticsObject'] = r;
+				i[r] = i[r] || function() {
+					(i[r].queue = i[r].queue || []).push(arguments)
+				}
+				a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})
+			(window, document, 'script', 'https://cdn.jsdelivr.net/npm/search-insights@0.0.14/dist/search-insights.min.js', 'aa')
+			aa('init', {
+				apiKey: '08240194d5ef567a9f14e0f066bace0c',
+				applicationID: 'UJ5WYC0L7X'
+			})
+		</script>
+	</head>
+
+	<body data-gr-c-s-loaded="true" rel="default" style="" class="small-header">
+
+		<noscript>This page will only work with JavaScript enabled</noscript>
+
+<!-- uiView: -->
+		<div id="main" role="main" ui-view="" class="ng-scope">
+			<div class="container ng-scope">
+
+<!-- Page Header block -->
+				<header class="page-header">
+<!-- HN Logo block -->
+					<div class="logo-wrapper">
+						<a class="logo" ng-click="reset()" ng-href="/?" href="/?">
+							<img src="/assets/logo-hn-search.png">
+							<div class="logo-name">
+								Search
+								<br>
+								Hacker News
+							</div>
+						</a>
+					</div>
+
+<!-- uiView: col-2 -->
+					<div class="search-wrapper ng-scope" ui-view="col-2">
+<!-- Input block -->
+						<div class="item-input-wrapper ng-scope">
+							<i class="icon-search"></i>
+							<input
+								type="search"
+								placeholder="Search stories by title, url or author"
+								ng-model="$parent.query"
+								ng-model-options="{debounce: 100}"
+								ng-blur="blurred()"
+								ng-keyup="keyup($event)"
+								autocomplete="off"
+								autocapitalize="off"
+								spellcheck="false"
+								autocorrect="off"
+								autofocus=""
+								class="ng-pristine ng-valid ng-empty ng-touched"
+							>
+						</div>
+<!-- Algolia Logo block -->
+						<span class="powered-by ng-scope">
+							by
+		<!-- ngIf: settings.style == "experimental" -->
+
+		<!-- ngIf: settings.style == "default" -->
+							<a
+								href="https://www.algolia.com/?utm_source=hn_search&amp;utm_medium=link&amp;utm_term=logo&amp;utm_campaign=hn_algolia"
+								ng-if="settings.style == &quot;default&quot;"
+								title="Realtime Search Engine"
+								class="ng-scope"
+							>
+								<img
+									width="60"
+									height="15"
+									src="//d3nb9u6x572n0.cloudfront.net/assets/algolia-logo-white-65086ed3930483340981cc7aaab1be051e38bc091406fd806d0ad05640c1bc28.svg"
+								    alt="Algolia logo white">
+							</a>
+		<!-- end ngIf: settings.style == "default" -->
+
+						</span>
+					</div>
+					<div class="nav-link-settings">
+<!-- ngIf: results -->
+						<a active-link="" ng-href="/settings?" ng-if="results" class="ng-scope active" href="/settings?">
+							<i class="icon-params"></i>
+						</a>
+<!-- end ngIf: results -->
+<!-- ngIf: isSettings -->
+					</div>
+				</header>
+
+				<section class="main">
+<!-- Aside Panel for "Experimental" setting, not seen with "Default" setting -->
+					<Aside/>
+
+<!-- uiView: SortContainer Component -->
+					<header ui-view="main-header" class="ng-scope">
+						<a class="sliding-menu-button ng-binding ng-scope" ng-click="toggleNav()" type="button"></a>
+						<span class="state-title ng-scope ng-hide" ng-show="state">
+							<h1 class="ng-binding"></h1>
+							<span class="filter-label">in</span>
+						</span>
+						<span class="filter-label ng-scope" ng-show="!state">Search</span>
+						<div
+							class="type-dropdown wrap-dd-select ng-isolate-scope"
+							dropdown-item-label="text"
+							dropdown-model="ddTypeSelected"
+							dropdown-onchange="selectType(selected)"
+							dropdown-select="ddSelectType"
+						>
+							<span class="selected ng-binding">Stories</span>
+							<ul class="dropdown">
+								<!-- ngRepeat: item in dropdownSelect -->
+								<li
+									ng-class="{divider: dropdownSelectItem.divider}"
+									ng-repeat="item in dropdownSelect"
+									class="dropdown-item ng-scope ng-isolate-scope"
+									dropdown-select-item="item"
+									dropdown-item-label="labelField"
+								>
+								<!-- ngIf: !dropdownSelectItem.divider -->
+									<a
+										class="dropdown-item ng-binding ng-scope"
+										ng-if="!dropdownSelectItem.divider"
+										ng-href=""
+										ng-click="selectItem()"
+									>
+										All
+									</a>
+								<!-- end ngIf: !dropdownSelectItem.divider -->
+								</li>
+								<!-- end ngRepeat: item in dropdownSelect -->
+								<li
+									ng-class="{divider: dropdownSelectItem.divider}"
+									ng-repeat="item in dropdownSelect"
+									class="dropdown-item ng-scope ng-isolate-scope"
+									dropdown-select-item="item"
+									dropdown-item-label="labelField"
+								>
+								<!-- ngIf: !dropdownSelectItem.divider -->
+									<a
+										class="dropdown-item ng-binding ng-scope"
+										ng-if="!dropdownSelectItem.divider"
+										ng-href=""
+										ng-click="selectItem()"
+									>
+										Stories
+									</a>
+								<!-- end ngIf: !dropdownSelectItem.divider -->
+								</li>
+								<!-- end ngRepeat: item in dropdownSelect -->
+								<li
+									ng-class="{divider: dropdownSelectItem.divider}"
+									ng-repeat="item in dropdownSelect"
+									class="dropdown-item ng-scope ng-isolate-scope"
+									dropdown-select-item="item"
+									dropdown-item-label="labelField"
+								>
+								<!-- ngIf: !dropdownSelectItem.divider -->
+									<a
+										class="dropdown-item ng-binding ng-scope"
+										ng-if="!dropdownSelectItem.divider"
+										ng-href=""
+										ng-click="selectItem()"
+									>
+										Comments
+									</a>
+								<!-- end ngIf: !dropdownSelectItem.divider -->
+								</li>
+								<!-- end ngRepeat: item in dropdownSelect -->
+							</ul>
+						</div>
+						<span class="filter-label ng-scope">by</span>
+						<div class="type-dropdown wrap-dd-select ng-isolate-scope" dropdown-item-label="text" dropdown-model="ddSortSelected" dropdown-onchange="sortBy(selected.value)" dropdown-select="ddSelectSort"><span class="selected ng-binding">Popularity</span><ul class="dropdown"><!-- ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Popularity</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Date</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --></ul></div>
+						<span class="filter-label ng-scope">for</span>
+						<div class="type-dropdown wrap-dd-select ng-isolate-scope" dropdown-item-label="text" dropdown-model="ddDateSelected" dropdown-onchange="selectDate(selected.value)" dropdown-select="ddSelectDate"><span class="selected ng-binding">All time</span><ul class="dropdown"><!-- ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">All time</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Last 24h</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Past Week</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Past Month</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Past Year</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --><li ng-class="{divider: dropdownSelectItem.divider}" ng-repeat="item in dropdownSelect" class="dropdown-item ng-scope ng-isolate-scope" dropdown-select-item="item" dropdown-item-label="labelField"><!-- ngIf: !dropdownSelectItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownSelectItem.divider" ng-href="" ng-click="selectItem()">Custom range</a><!-- end ngIf: !dropdownSelectItem.divider --></li><!-- end ngRepeat: item in dropdownSelect --></ul></div>
+						<ul class="list-inline search-infos ng-scope" defer-share-dropdown="" ng-show="results">
+							<li class="ng-binding">
+								<span ng-show="settings.page > 0" class="ng-binding ng-hide">Page 1 of</span>
+								<ng-pluralize count="results.nbHits" when="{&quot;0&quot;: &quot;No results&quot;, &quot;one&quot;: &quot;1 result&quot;, &quot;other&quot;: &quot;17,956,328 results&quot;}">17,956,328 results</ng-pluralize>
+								(0.006 seconds)
+							</li>
+							<li class="action-share">
+								<a class="placeholder">
+
+								</a>
+
+								<div class="wrap-dd-menu"><a class="dropwdown-share ng-scope ng-isolate-scope" dropdown-menu="ddMenuShare" dropdown-onchange="shareItem(selected)" ng-href="https://hn.algolia.com/?sort=byPopularity&amp;prefix&amp;page=0&amp;dateRange=all&amp;type=story&amp;query=" href="https://hn.algolia.com/?sort=byPopularity&amp;prefix&amp;page=0&amp;dateRange=all&amp;type=story&amp;query=">
+									<i class="icon-share"></i>
+								</a><ul class="dropdown ng-scope"><!-- ngRepeat: item in dropdownMenu --><li ng-class="{divider: dropdownMenuItem.divider}" ng-repeat="item in dropdownMenu" class="dropdown-item ng-scope ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item"><!-- ngIf: !dropdownMenuItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownMenuItem.divider" ng-href="" ng-click="selectItem()"><!-- ngIf: dropdownMenuItem.icon --><i ng-if="dropdownMenuItem.icon" ng-class="dropdownMenuItem.icon" class="ng-scope icon-twitter"></i><!-- end ngIf: dropdownMenuItem.icon -->Share on Twitter</a><!-- end ngIf: !dropdownMenuItem.divider --></li><!-- end ngRepeat: item in dropdownMenu --><li ng-class="{divider: dropdownMenuItem.divider}" ng-repeat="item in dropdownMenu" class="dropdown-item ng-scope ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item"><!-- ngIf: !dropdownMenuItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownMenuItem.divider" ng-href="" ng-click="selectItem()"><!-- ngIf: dropdownMenuItem.icon --><i ng-if="dropdownMenuItem.icon" ng-class="dropdownMenuItem.icon" class="ng-scope icon-facebook"></i><!-- end ngIf: dropdownMenuItem.icon -->Share on Facebook</a><!-- end ngIf: !dropdownMenuItem.divider --></li><!-- end ngRepeat: item in dropdownMenu --><li ng-class="{divider: dropdownMenuItem.divider}" ng-repeat="item in dropdownMenu" class="dropdown-item ng-scope ng-isolate-scope" dropdown-item-label="labelField" dropdown-menu-item="item"><!-- ngIf: !dropdownMenuItem.divider --><a class="dropdown-item ng-binding ng-scope" ng-if="!dropdownMenuItem.divider" ng-href="" ng-click="selectItem()"><!-- ngIf: dropdownMenuItem.icon --><i ng-if="dropdownMenuItem.icon" ng-class="dropdownMenuItem.icon" class="ng-scope icon-envelope-o"></i><!-- end ngIf: dropdownMenuItem.icon -->Share by Email</a><!-- end ngIf: !dropdownMenuItem.divider --></li><!-- end ngRepeat: item in dropdownMenu --></ul></div></li>
+						</ul>
+					<!-- ngIf: settings.dateRange === "custom" && (!settings.dateStart || !settings.dateEnd) -->
+					</header>
+
+<!-- uiView: Items Component -->
+					<section class="main-content ng-scope" ui-view="main-content">
+<!-- ngIf: isSlowConnection -->
+						<section class="search-results ng-scope" defer-share-dropdown="" sticky-list="">
+
+<!-- uiView: Item Component -->
+<!-- ngRepeat: hit in results.hits -->
+							<div
+								bindonce=""
+								class="item ng-scope item_16582136"
+								ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)"
+								ng-click="clickHit(hit.objectID, $index + 1)"
+								ng-repeat="hit in results.hits"
+							>
+								<div class="item-main">
+									<div class="item-content-wrapper">
+								<!-- boIf:
+									settings.showThumbnails
+									&& settings.style !== "default"
+									&& hit._tags[0] === "story"
+									&& state !== "ask-hn"
+									&& state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a
+													bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)"
+													bo-html="hit._highlightResult.title.value"
+													bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'"
+													ng-click="gotoHit(hit.objectID)" href="http://www.bbc.com/news/uk-43396008"
+												>
+													Stephen Hawking has died
+												</a>
+<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a
+														bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID"
+														title="See original post on HN"
+														href="https://news.ycombinator.com/item?id=16582136"
+													>
+														<span class="date ng-binding">6015 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a
+														bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author"
+														title="See Cogito&nbsp;profile"
+														href="https://news.ycombinator.com/user?id=Cogito"
+													>
+														<span bo-html="hit._highlightResult.author.value" class="author">Cogito</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a
+														bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)"
+														title="2018-03-14T03:50:30.000Z"
+														href="https://news.ycombinator.com/item?id=16582136"
+													>
+														<span class="date ng-binding">a year ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a
+														bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID"
+														title="See original post on HN"
+														href="https://news.ycombinator.com/item?id=16582136"
+													>
+														<span class="comments ng-binding">436 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a
+														bo-href="hit.url"
+														bo-html="hit._highlightResult.url.value | domain"
+														class="hit-link"
+														href="http://www.bbc.com/news/uk-43396008"
+													>
+														(http://www.bbc.com/news/uk-43396008)
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div
+											bo-html="hit._highlightResult.comment_text.value|cleanup"
+											bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;"
+											class="text-container"
+											style="display: none;"
+										>
+										</div>
+										<div
+											bo-html="hit._highlightResult.story_text.value|cleanup"
+											bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)"
+											class="text-container"
+											style="display: none;"
+										>
+										</div>
+									</div>
+									<div
+										bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;"
+										class="item-actions"
+									>
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+<!-- %i.icon-speech-bubble -->
+												<a
+													bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)"
+													bo-show="hit.num_comments > 0"
+													class="comments-bubble ng-binding"
+													ng-click="loadComments(hit.objectID, $event)"
+													href="/story/16582136/stephen-hawking-has-died"
+												>
+<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													436
+												</a>
+<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span
+														bo-show="hit.num_comments == 0"
+														class="comments-bubble no-comments"
+														style="display: none;"
+												>
+													0
+												</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a
+													href="#"
+													ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }"
+													ng-click="toggleStar($event, hit.objectID)"
+												>
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+<!-- end ngRepeat: hit in results.hits -->
+
+<!-- uiView: Item Component -->
+							<div
+								bindonce=""
+								class="item ng-scope item_11116274"
+								ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)"
+								ng-click="clickHit(hit.objectID, $index + 1)"
+								ng-repeat="hit in results.hits"
+							>
+								<div class="item-main">
+									<div class="item-content-wrapper">
+								<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a
+													bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)"
+													bo-html="hit._highlightResult.title.value"
+													bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'"
+													ng-click="gotoHit(hit.objectID)"
+													href="http://www.apple.com/customer-letter/"
+												>
+													A Message to Our Customers
+												</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=11116274">
+														<span class="date ng-binding">5771 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See epaga&nbsp;profile" href="https://news.ycombinator.com/user?id=epaga">
+														<span bo-html="hit._highlightResult.author.value" class="author">epaga</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2016-02-17T08:38:37.000Z" href="https://news.ycombinator.com/item?id=11116274">
+														<span class="date ng-binding">3 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=11116274">
+														<span class="comments ng-binding">967 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://www.apple.com/customer-letter/">(http://www.apple.com/customer-letter/)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/11116274/a-message-to-our-customers">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													967
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+
+<!-- uiView: Item Component -->
+<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_3078128" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://www.apple.com/stevejobs/">Steve Jobs has passed away.</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=3078128">
+														<span class="date ng-binding">4271 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See patricktomas&nbsp;profile" href="https://news.ycombinator.com/user?id=patricktomas">
+														<span bo-html="hit._highlightResult.author.value" class="author">patricktomas</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2011-10-05T23:42:23.000Z" href="https://news.ycombinator.com/item?id=3078128">
+														<span class="date ng-binding">8 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=3078128">
+														<span class="comments ng-binding">376 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://www.apple.com/stevejobs/">(http://www.apple.com/stevejobs/)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/3078128/steve-jobs-has-passed-away">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													376
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_13682022" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://www.susanjfowler.com/blog/2017/2/19/reflecting-on-one-very-strange-year-at-uber">Reflecting on one very, very strange year at Uber</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13682022">
+														<span class="date ng-binding">4107 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See grey-area&nbsp;profile" href="https://news.ycombinator.com/user?id=grey-area">
+														<span bo-html="hit._highlightResult.author.value" class="author">grey-area</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-02-19T21:16:33.000Z" href="https://news.ycombinator.com/item?id=13682022">
+														<span class="date ng-binding">2 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13682022">
+														<span class="comments ng-binding">1014 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://www.susanjfowler.com/blog/2017/2/19/reflecting-on-one-very-strange-year-at-uber">(https://www.susanjfowler.com/blog/2017/2/19/reflecting-on-one-very-strange-year-at-uber)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/13682022/reflecting-on-one-very-very-strange-year-at-uber">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													1014
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_15924794" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html">F.C.C. Repeals Net Neutrality Rules</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15924794">
+														<span class="date ng-binding">3384 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See panny&nbsp;profile" href="https://news.ycombinator.com/user?id=panny">
+														<span bo-html="hit._highlightResult.author.value" class="author">panny</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-12-14T18:13:35.000Z" href="https://news.ycombinator.com/item?id=15924794">
+														<span class="date ng-binding">a year ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15924794">
+														<span class="comments ng-binding">1397 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html">(https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/15924794/f-c-c-repeals-net-neutrality-rules">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													1397
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_3742902" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://news.ycombinator.com/vote?for=3742902&amp;dir=up&amp;whence=%6e%65%77%65%73%74">Show HN: This up votes itself</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=3742902">
+														<span class="date ng-binding">3381 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See olalonde&nbsp;profile" href="https://news.ycombinator.com/user?id=olalonde">
+														<span bo-html="hit._highlightResult.author.value" class="author">olalonde</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2012-03-23T00:40:39.000Z" href="https://news.ycombinator.com/item?id=3742902">
+														<span class="date ng-binding">7 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=3742902">
+														<span class="comments ng-binding">83 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://news.ycombinator.com/vote?for=3742902&amp;dir=up&amp;whence=%6e%65%77%65%73%74">(http://news.ycombinator.com/vote?for=3742902&amp;dir=up&amp;whence=%6e%65%77%65%73%74)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/3742902/show-hn-this-up-votes-itself">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													83
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_13718752" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1139">Cloudflare Reverse Proxies Are Dumping Uninitialized Memory</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13718752">
+														<span class="date ng-binding">3238 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See tptacek&nbsp;profile" href="https://news.ycombinator.com/user?id=tptacek">
+														<span bo-html="hit._highlightResult.author.value" class="author">tptacek</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-02-23T23:05:08.000Z" href="https://news.ycombinator.com/item?id=13718752">
+														<span class="date ng-binding">2 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13718752">
+														<span class="comments ng-binding">992 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1139">(https://bugs.chromium.org/p/project-zero/issues/detail?id=1139)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/13718752/cloudflare-reverse-proxies-are-dumping-uninitialized-memory">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													992
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_11966167" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://www.bbc.co.uk/news/uk-politics-36615028">UK votes to leave EU</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=11966167">
+														<span class="date ng-binding">3125 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See dmmalam&nbsp;profile" href="https://news.ycombinator.com/user?id=dmmalam">
+														<span bo-html="hit._highlightResult.author.value" class="author">dmmalam</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2016-06-24T03:48:57.000Z" href="https://news.ycombinator.com/item?id=11966167">
+														<span class="date ng-binding">3 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=11966167">
+														<span class="comments ng-binding">2531 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://www.bbc.co.uk/news/uk-politics-36615028">(http://www.bbc.co.uk/news/uk-politics-36615028)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/11966167/uk-votes-to-leave-eu">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													2531
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_8532261" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://www.businessweek.com/articles/2014-10-30/tim-cook-im-proud-to-be-gay">Tim Cook Speaks Up</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=8532261">
+														<span class="date ng-binding">3086 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See replicatorblog&nbsp;profile" href="https://news.ycombinator.com/user?id=replicatorblog">
+														<span bo-html="hit._highlightResult.author.value" class="author">replicatorblog</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2014-10-30T11:12:23.000Z" href="https://news.ycombinator.com/item?id=8532261">
+														<span class="date ng-binding">4 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=8532261">
+														<span class="comments ng-binding">974 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://www.businessweek.com/articles/2014-10-30/tim-cook-im-proud-to-be-gay">(http://www.businessweek.com/articles/2014-10-30/tim-cook-im-proud-to-be-gay)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/8532261/tim-cook-speaks-up">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													974
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_13713480" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Announcing the first SHA-1 collision</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13713480">
+														<span class="date ng-binding">3030 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See pfg&nbsp;profile" href="https://news.ycombinator.com/user?id=pfg">
+														<span bo-html="hit._highlightResult.author.value" class="author">pfg</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-02-23T13:01:08.000Z" href="https://news.ycombinator.com/item?id=13713480">
+														<span class="date ng-binding">2 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13713480">
+														<span class="comments ng-binding">485 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">(https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/13713480/announcing-the-first-sha-1-collision">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													485
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_15800676" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://twitter.com/lemiorhan/status/935578694541770752">macOS High Sierra: Anyone can login as “root” with empty password</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15800676">
+														<span class="date ng-binding">3001 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See vladikoff&nbsp;profile" href="https://news.ycombinator.com/user?id=vladikoff">
+														<span bo-html="hit._highlightResult.author.value" class="author">vladikoff</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-11-28T19:41:10.000Z" href="https://news.ycombinator.com/item?id=15800676">
+														<span class="date ng-binding">a year ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15800676">
+														<span class="comments ng-binding">813 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://twitter.com/lemiorhan/status/935578694541770752">(https://twitter.com/lemiorhan/status/935578694541770752)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/15800676/macos-high-sierra-anyone-can-login-as-root-with-empty-password">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													813
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_16319505" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://techcrunch.com/2018/02/06/spacexs-historic-falcon-heavy-successfully-launches/?ncid=rss&amp;utm_source=dlvr.it&amp;utm_medium=twitter">SpaceX’s Falcon Heavy successfully launches</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=16319505">
+														<span class="date ng-binding">2968 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See mpweiher&nbsp;profile" href="https://news.ycombinator.com/user?id=mpweiher">
+														<span bo-html="hit._highlightResult.author.value" class="author">mpweiher</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2018-02-06T20:57:15.000Z" href="https://news.ycombinator.com/item?id=16319505">
+														<span class="date ng-binding">a year ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=16319505">
+														<span class="comments ng-binding">872 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://techcrunch.com/2018/02/06/spacexs-historic-falcon-heavy-successfully-launches/?ncid=rss&amp;utm_source=dlvr.it&amp;utm_medium=twitter">(https://techcrunch.com/2018/02/06/spacexs-historic-falcon-heavy-successfully-launches/?ncid=rss&amp;utm_source=dlvr.it&amp;utm_medium=twitter)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/16319505/spacex-s-falcon-heavy-successfully-launches">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													872
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_18224227" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://www.cnbc.com/2018/10/15/microsoft-co-founder-paul-allen-dies-of-cancer-at-age-65.html">Paul Allen has died</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=18224227">
+														<span class="date ng-binding">2901 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See coloneltcb&nbsp;profile" href="https://news.ycombinator.com/user?id=coloneltcb">
+														<span bo-html="hit._highlightResult.author.value" class="author">coloneltcb</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2018-10-15T22:00:14.000Z" href="https://news.ycombinator.com/item?id=18224227">
+														<span class="date ng-binding">6 months ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=18224227">
+														<span class="comments ng-binding">277 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://www.cnbc.com/2018/10/15/microsoft-co-founder-paul-allen-dies-of-cancer-at-age-65.html">(https://www.cnbc.com/2018/10/15/microsoft-co-founder-paul-allen-dies-of-cancer-at-age-65.html)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/18224227/paul-allen-has-died">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													277
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_17221527" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://www.bloomberg.com/news/articles/2018-06-03/microsoft-is-said-to-have-agreed-to-acquire-coding-site-github?">Microsoft Is Said to Have Agreed to Acquire GitHub</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=17221527">
+														<span class="date ng-binding">2873 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See miguelrochefort&nbsp;profile" href="https://news.ycombinator.com/user?id=miguelrochefort">
+														<span bo-html="hit._highlightResult.author.value" class="author">miguelrochefort</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2018-06-03T20:14:26.000Z" href="https://news.ycombinator.com/item?id=17221527">
+														<span class="date ng-binding">a year ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=17221527">
+														<span class="comments ng-binding">1437 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://www.bloomberg.com/news/articles/2018-06-03/microsoft-is-said-to-have-agreed-to-acquire-coding-site-github?">(http://www.bloomberg.com/news/articles/2018-06-03/microsoft-is-said-to-have-agreed-to-acquire-coding-site-github?)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/17221527/microsoft-is-said-to-have-agreed-to-acquire-github">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													1437
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_18847043" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://blog.github.com/2019-01-07-new-year-new-github/">Announcing unlimited free private repos</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=18847043">
+														<span class="date ng-binding">2867 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See razer6&nbsp;profile" href="https://news.ycombinator.com/user?id=razer6">
+														<span bo-html="hit._highlightResult.author.value" class="author">razer6</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2019-01-07T17:03:59.000Z" href="https://news.ycombinator.com/item?id=18847043">
+														<span class="date ng-binding">4 months ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=18847043">
+														<span class="comments ng-binding">685 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://blog.github.com/2019-01-07-new-year-new-github/">(https://blog.github.com/2019-01-07-new-year-new-github/)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/18847043/announcing-unlimited-free-private-repos">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													685
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_15278883" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://boingboing.net/2017/09/18/antifeatures-for-all.html">W3C abandons consensus, standardizes DRM, EFF resigns</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15278883">
+														<span class="date ng-binding">2735 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See guelo&nbsp;profile" href="https://news.ycombinator.com/user?id=guelo">
+														<span bo-html="hit._highlightResult.author.value" class="author">guelo</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-09-18T19:45:08.000Z" href="https://news.ycombinator.com/item?id=15278883">
+														<span class="date ng-binding">2 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=15278883">
+														<span class="comments ng-binding">978 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://boingboing.net/2017/09/18/antifeatures-for-all.html">(https://boingboing.net/2017/09/18/antifeatures-for-all.html)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/15278883/w3c-abandons-consensus-standardizes-drm-eff-resigns">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													978
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_7373566" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://gabrielecirulli.github.io/2048/">2048</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=7373566">
+														<span class="date ng-binding">2732 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See frederfred&nbsp;profile" href="https://news.ycombinator.com/user?id=frederfred">
+														<span bo-html="hit._highlightResult.author.value" class="author">frederfred</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2014-03-10T15:44:42.000Z" href="https://news.ycombinator.com/item?id=7373566">
+														<span class="date ng-binding">5 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=7373566">
+														<span class="comments ng-binding">410 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://gabrielecirulli.github.io/2048/">(http://gabrielecirulli.github.io/2048/)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/7373566/2048">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													410
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_13810015" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://wikileaks.org/ciav7p1/">CIA malware and hacking tools</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13810015">
+														<span class="date ng-binding">2699 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See randomname2&nbsp;profile" href="https://news.ycombinator.com/user?id=randomname2">
+														<span bo-html="hit._highlightResult.author.value" class="author">randomname2</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2017-03-07T13:10:56.000Z" href="https://news.ycombinator.com/item?id=13810015">
+														<span class="date ng-binding">2 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=13810015">
+														<span class="comments ng-binding">1087 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://wikileaks.org/ciav7p1/">(https://wikileaks.org/ciav7p1/)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/13810015/cia-malware-and-hacking-tools">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													1087
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_19393279" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="https://internalregister.github.io/2019/03/14/Homebrew-Console.html">Show HN: A retro video game console I've been working on in my free time</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=19393279">
+														<span class="date ng-binding">2690 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See pkiller&nbsp;profile" href="https://news.ycombinator.com/user?id=pkiller">
+														<span bo-html="hit._highlightResult.author.value" class="author">pkiller</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2019-03-14T20:25:03.000Z" href="https://news.ycombinator.com/item?id=19393279">
+														<span class="date ng-binding">a month ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=19393279">
+														<span class="comments ng-binding">210 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="https://internalregister.github.io/2019/03/14/Homebrew-Console.html">(https://internalregister.github.io/2019/03/14/Homebrew-Console.html)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/19393279/show-hn-a-retro-video-game-console-i-ve-been-working-on-in-my-free-time">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													210
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div bindonce="" class="item ng-scope item_6258422" ng-class="&quot;item_&quot; + hit.objectID + (story[hit.objectID] ? &quot; item-show-comments&quot; : &quot;&quot;)" ng-click="clickHit(hit.objectID, $index + 1)" ng-repeat="hit in results.hits">
+								<div class="item-main">
+									<div class="item-content-wrapper">
+										<!-- boIf: settings.showThumbnails && settings.style !== "default" && hit._tags[0] === "story" && state !== "ask-hn" && state !== "polls" -->
+										<div class="item-title-and-infos">
+											<h2>
+												<a bo-href="hit.url || ('https://news.ycombinator.com/item?id=' + hit.objectID)" bo-html="hit._highlightResult.title.value" bo-show="hit._tags[0] === 'story' || hit._tags[0] === 'poll' || hit._tags[0] === 'job'" ng-click="gotoHit(hit.objectID)" href="http://varnull.adityamukerjee.net/post/59021412512/dont-fly-during-ramadan">Don't Fly During Ramadan</a>
+												<!-- boIf: hit._tags[0] === 'comment' -->
+											</h2>
+											<ul class="item-infos list-inline">
+												<li bo-show="hit.points">
+													<i class="icon-heart"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=6258422">
+														<span class="date ng-binding">2617 points</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-head"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/user?id=&quot; + hit.author" title="See chimeracoder&nbsp;profile" href="https://news.ycombinator.com/user?id=chimeracoder">
+														<span bo-html="hit._highlightResult.author.value" class="author">chimeracoder</span>
+													</a>
+												</li>
+												<li>
+													<i class="icon-clock"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + (hit._tags[0] === &quot;comment&quot; ? hit.story_id + &quot;#&quot; + hit.objectID : hit.objectID)" title="2013-08-22T17:10:57.000Z" href="https://news.ycombinator.com/item?id=6258422">
+														<span class="date ng-binding">6 years ago</span>
+													</a>
+												</li>
+												<li bo-show="settings.style === &quot;default&quot;">
+													<i class="icon-speech-bubble"></i>
+													<a bo-href="&quot;https://news.ycombinator.com/item?id=&quot; + hit.objectID" title="See original post on HN" href="https://news.ycombinator.com/item?id=6258422">
+														<span class="comments ng-binding">961 comment<span bo-show="hit.num_comments != 1">s</span></span>
+													</a>
+												</li>
+												<li bo-show="hit.url">
+													<a bo-href="hit.url" bo-html="hit._highlightResult.url.value | domain" class="hit-link" href="http://varnull.adityamukerjee.net/post/59021412512/dont-fly-during-ramadan">(http://varnull.adityamukerjee.net/post/59021412512/dont-fly-during-ramadan)</a>
+												</li>
+											</ul>
+										</div>
+										<div bo-html="hit._highlightResult.comment_text.value|cleanup" bo-show="hit.comment_text &amp;&amp; hit._tags[0] === &quot;comment&quot;" class="text-container" style="display: none;"></div>
+										<div bo-html="hit._highlightResult.story_text.value|cleanup" bo-show="hit.story_text &amp;&amp; (hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;job&quot;)" class="text-container" style="display: none;"></div>
+									</div>
+									<div bo-show="hit._tags[0] === &quot;story&quot; || hit._tags[0] === &quot;poll&quot; || hit._tags[0] === &quot;job&quot;" class="item-actions">
+										<ul class="list-inline">
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-comments">
+												<!-- %i.icon-speech-bubble -->
+												<a bo-href="&quot;/story/&quot; + hit.objectID + &quot;/&quot; + friendly(hit.title)" bo-show="hit.num_comments > 0" class="comments-bubble ng-binding" ng-click="loadComments(hit.objectID, $event)" href="/story/6258422/don-t-fly-during-ramadan">
+													<!-- {{ ::hit.num_comments }} comment<span bo-show="hit.num_comments != 1">s</span> -->
+													961
+												</a>
+												<!-- %span{'bo-show' => 'hit.num_comments == 0'} no comment -->
+												<span bo-show="hit.num_comments == 0" class="comments-bubble no-comments" style="display: none;">0</span>
+											</li>
+											<li class="action-share">
+												<a class="placeholder">
+													<i class="icon-share"></i>
+												</a>
+
+											</li>
+											<li bo-show="state != &quot;jobs&quot;" class="action-toggle-star">
+												<a href="#" ng-class="{ &quot;starred&quot;: isStarred(hit.objectID) }" ng-click="toggleStar($event, hit.objectID)">
+													<i class="icon-star"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ngIf: story[hit.objectID] -->
+								<div class="item-clearfix"></div>
+							</div>
+						<!-- end ngRepeat: hit in results.hits -->
+							<div
+								class="no-results text-center ng-hide"
+								ng-show="results.hits.length == 0 &amp;&amp; state == &quot;starred&quot; &amp;&amp; settings.dateRange == &quot;all&quot; "
+							>
+								<p>You don't have any starred items.</p>
+							</div>
+							<div
+								class="no-results text-center ng-hide"
+								ng-show="results.hits.length == 0 &amp;&amp; state == &quot;starred&quot; &amp;&amp; settings.dateRange != &quot;all&quot;"
+							>
+								<p>You don't have any starred items <strong>for this period</strong>.</p>
+							</div>
+							<div class="no-results ng-hide" ng-show="results.hits.length == 0 &amp;&amp; state != &quot;starred&quot;">
+								<p>
+									No
+									<strong ng-show="settings.type === &quot;all&quot;" class="ng-hide">items</strong>
+									<strong ng-show="settings.type === &quot;story&quot;">stories</strong>
+									<strong ng-show="settings.type === &quot;comment&quot;" class="ng-hide">comments</strong>
+									<span ng-show="state == &quot;user&quot; " class="ng-hide">
+										by
+										<strong><code class="ng-binding"></code></strong>
+									</span>
+									<span ng-show="query" class="ng-hide">
+										matching
+										<strong class="ng-binding">
+											<span ng-show="state === &quot;ask-hn&quot;" class="ng-hide">Ask HN:</span>
+											<span ng-show="state === &quot;show-hn&quot;" class="ng-hide">Show HN:</span>
+											<span ng-show="state === &quot;jobs&quot;" class="ng-hide">Jobs:</span>
+											<span ng-show="state === &quot;polls&quot;" class="ng-hide">Polls:</span>
+											<span ng-show="state === &quot;hot&quot;" class="ng-hide">Hot:</span>
+										</strong>
+									</span>
+									<span ng-show="settings.dateRange !== &quot;all&quot;" class="ng-hide">
+										in the
+										<strong ng-show="settings.dateRange === &quot;last24h&quot;" class="ng-hide">last 24 hours</strong>
+										<strong ng-show="settings.dateRange === &quot;pastWeek&quot;" class="ng-hide">past week</strong>
+										<strong ng-show="settings.dateRange === &quot;pastMonth&quot;" class="ng-hide">past month</strong>
+										<strong ng-show="settings.dateRange === &quot;pastYear&quot;" class="ng-hide">past year</strong>
+									</span>
+								</p>
+								<div ng-show="query || settings.dateRange !== &quot;all&quot; || settings.type !== &quot;all&quot;">
+									<p>Suggestions:</p>
+									<ul>
+										<li ng-show="query" class="ng-hide">
+											<a href="#" ng-click="selectInput($event)">Try different keywords.</a>
+										</li>
+										<li ng-show="settings.dateRange !== &quot;all&quot;" class="ng-hide">
+											<a href="#" ng-click="widerDateRange($event)">Try a wider date range.</a>
+										</li>
+										<li ng-show="settings.type !== &quot;all&quot;">
+											<a href="#" ng-click="searchAllItems($event)">
+												Search also for&nbsp;<!-- ngIf: settings.type === "story" --><span ng-if="settings.type === &quot;story&quot;" class="ng-scope">comments</span><!-- end ngIf: settings.type === "story" --><!-- ngIf: settings.type === "comment" -->.
+											</a>
+										</li>
+									</ul>
+									<div class="spacer2"></div>
+									<p>
+										Or try popular queries:
+										<br>
+										<!-- ngRepeat: p in populars -->
+									</p>
+								</div>
+							</div>
+						<!-- ngIf: results && results.nbPages > 1 -->
+							<ul class="search-pagination ng-scope" ng-if="results &amp;&amp; results.nbPages > 1">
+								<li>
+									<button ng-click="prevPage()" ng-hide="settings.page == 0" class="ng-hide">
+										<i class="icon-rewind"></i>
+									</button>
+								</li>
+						<!-- ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }"
+								    ng-repeat="n in getPages(results) track by $index"
+								    class="ng-scope active"
+								>
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">1</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">2</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">3</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">4</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">5</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding ng-hide">...1</button>
+									<button disabled="" ng-show="n === &quot;...&quot;">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li ng-class="{ &quot;active&quot;: (n == settings.page) }" ng-repeat="n in getPages(results) track by $index" class="ng-scope">
+									<button ng-click="toPage(n)" ng-show="n !== &quot;...&quot;" class="ng-binding">50</button>
+									<button disabled="" ng-show="n === &quot;...&quot;" class="ng-hide">
+										<i class="icon-ellipsis"></i>
+									</button>
+								</li>
+						<!-- end ngRepeat: n in getPages(results) track by $index -->
+								<li>
+									<button ng-click="nextPage()" ng-hide="settings.page >= results.nbPages - 1">
+										<i class="icon-fast-forward"></i>
+									</button>
+								</li>
+							</ul>
+					<!-- end ngIf: results && results.nbPages > 1 -->
+						</section>
+						<a class="scroll-to-top fade ng-scope" href="#" title="Back to top">
+							<span class="tooltip">
+								<span>Top [↑]</span>
+							</span>
+						</a>
+					</section>
+					<FooterContainer/>
+
+				</section>
+			</div>
+		</div>
+		<script src="https://d3nb9u6x572n0.cloudfront.net/assets/application-95a153ecab47e1e36e45ebf29290d6c3392c83c2d2aac11de83bb0ccfe09db8e.js"></script>
+	</body>
+	<div>
+		<div class="gr_-editor gr-iframe-first-load" style="display: none;">
+			<div class="gr_-editor_back"></div>
+			<iframe class="gr_-ifr gr-_dialog-content"></iframe>
+		</div>
+	</div>
+	<grammarly-card>
+		<div></div>
+	</grammarly-card>
+	<span class="gr__tooltip">
+		<span class="gr__tooltip-content"></span>
+		<i class="gr__tooltip-logo"></i>
+		<span class="gr__triangle"></span>
+	</span>
+</html>

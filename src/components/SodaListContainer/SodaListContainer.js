@@ -18,6 +18,9 @@ class SodaListContainer extends Component {
 
 	render() {
 		return <div>
+			<p>This is an extremely simple page</p>
+			<p>One component with 2 sub components, no CSS</p>
+			<br/>
 			<InputArea onSubmit={this.addItem}/>
 			<SodaList items={this.state.sodas}/>
 		</div>

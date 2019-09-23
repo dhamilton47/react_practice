@@ -5,9 +5,9 @@ import Adapter from 'enzyme-adapter-react-16';
 import { spy } from 'sinon';
 
 import ReactDOM from 'react-dom';
-import SodaListContainer from '../components/dave/components/SodaListContainer';
-import SodaList from '../components/dave/components/SodaList';
-import InputArea from '../components/dave/components/InputArea';
+import SodaListContainer from '../components/SodaListContainer/SodaListContainer';
+import SodaList from '../components/SodaListContainer/SodaList';
+import InputArea from '../components/SodaListContainer/InputArea';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('SodaListContainer', () => {

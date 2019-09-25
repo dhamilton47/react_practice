@@ -1,6 +1,6 @@
 /* Forecast App Universal Styles */
 
-.card-container {
+.forecast-card-container {
     border-top: lightgray solid 1px;
     border-left: lightgray solid 1px;
     border-bottom: lightgray solid 1px;
@@ -15,7 +15,7 @@
     /*text-align: left;*/
 }
 
-.card {
+.forecast-card {
     border-right: lightgrey solid 1px;
     display: grid;
     font-family: 'Work Sans', sans-serif;

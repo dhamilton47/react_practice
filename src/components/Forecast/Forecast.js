@@ -43,7 +43,7 @@ const WeatherData = [
 class Forecast extends Component {
 	render() {
 		return (
-			<ul className="card-container">
+			<ul className="forecast-card-container">
 				{WeatherData.map(day => <Day key={day.index} data={day}/>)}
 			</ul>
 		);

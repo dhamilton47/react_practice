@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Day = props => {
 	return (
-		<div className="card">
+		<div className="forecast-card">
 			<div className="item1">
 				{props.data.day}
 			</div>

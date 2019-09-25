@@ -4,14 +4,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import Page from '../Page/Page';
 
 import '../App/App.css';
-/*
-const lists = {
-	searchWhat: ["All", "Stories", "Comments"],
-	searchBy: ["Popularity", "Date"],
-	searchFor: ["All Time", "Last 24h", "Past Week", "Past Month", "Past Year", "Custom Range"],
-	shareHow: ["Share on Twitter", "Share on Facebook", "Share by Email"]
-};
-*/
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -25,25 +18,25 @@ class App extends Component {
 							iconClassName: "",
 							state: ""
 						},
-						about: {
+						soda_list: {
 							text: "Soda List",
 							link: "/soda_list/",
 							iconClassName: "",
 							state: ""
 						},
-						settings: {
+						social_card: {
 							text: "Social Card",
 							link: "/social_card/",
 							iconClassName: "",
 							state: ""
 						},
-						help: {
+						forecast: {
 							text: "5-Day Forecast",
 							link: "/forecast/",
 							iconClassName: "",
 							state: ""
 						},
-						api: {
+						calculator: {
 							text: "Calculator",
 							link: "/calculator/",
 							iconClassName: "",

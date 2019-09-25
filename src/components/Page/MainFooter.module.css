@@ -1,0 +1,29 @@
+.base {
+    background-color: white;
+    box-sizing: border-box;
+    display:   inline-block;
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 13px;
+    line-height: 1.5;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.base li {
+    display: inline-block;
+    padding-inline-start: 4px;
+    text-align: -webkit-match-parent;
+}
+
+.base li a {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}

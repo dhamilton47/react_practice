@@ -1,0 +1,74 @@
+.mainContent {
+    background-color: #f6f6ef;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 13px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mainContent a {
+    color: black;
+    text-decoration: none;
+}
+
+.page {
+    color: #5C5C5C;
+/*    font: inherit; */
+    margin-top: 0px;
+    padding: 30px 50px;
+    font-size: 14px
+}
+.page a {
+    color: #477DCA;
+}
+
+.page pre {
+    background: #e1e1e1;
+    border: 1px solid #d7d7d7;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 20px
+}
+
+.page code {
+    color: #1c709b;
+    background-color: #edf7fc;
+    padding: 3px 8px;
+    border-radius: 3px
+}
+
+.page h3 {
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 1.25;
+    margin: 1em 0 0.3em;
+    color: black;
+}
+.page ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.page ul li {
+    padding: 0 0 6px 0;
+}
+
+.page .panel {
+    border-radius: 5px;
+    border: solid 1px #d0d0d0;
+    padding: 10px 20px;
+    margin-bottom: 20px
+}
+
+.page .panel h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 0.4em 0 0.6em
+}
+
+.page .panel h3 {
+    margin: 0.4em 0 0.6em
+}

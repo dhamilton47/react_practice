@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Footer.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/ListLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/ListLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/MainContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/MainContent.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Content.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/MainFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Page.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +78,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Nav" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -92,11 +95,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\react_practice\src\components\Nav" />
       <recent name="C:\projects\react_practice\src\components\Page" />
       <recent name="C:\projects\react_practice\src\components\App" />
       <recent name="C:\projects\untitled" />
       <recent name="C:\projects\bowling_practice\src\components\App" />
-      <recent name="C:\projects\bowling_practice\public" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="C:\projects\bowling_practice\src\components\HackerNewsSearch\Items.js" />
@@ -216,7 +219,7 @@
       <workItem from="1569005389836" duration="86000" />
       <workItem from="1569205104831" duration="296000" />
       <workItem from="1569206037320" duration="183000" />
-      <workItem from="1569206332882" duration="16266000" />
+      <workItem from="1569206332882" duration="18097000" />
     </task>
     <servers />
   </component>

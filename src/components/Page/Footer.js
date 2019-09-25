@@ -1,14 +1,13 @@
 import React from "react";
-//import { ExternalLink } from "./ExternalLink";
 import { ListLink } from "./ListLink";
 import { ListSeparator } from "./ListSeparator";
-import mainFooterStyle from './MainFooter.module.css';
+import footerStyle from './Footer.module.css';
 
 
-export const MainFooter = props => {
+export const Footer = props => {
 	return (
-		<footer id="Main - Footer">
-			<ul className={mainFooterStyle.base}>
+		<footer id="Footer">
+			<ul className={footerStyle.base}>
 				<ListLink location={props.routes.home}/>
 				<ListSeparator/>
 				<ListLink location={props.routes.soda_list}/>

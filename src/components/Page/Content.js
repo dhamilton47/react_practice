@@ -5,10 +5,10 @@ import SodaListContainer from "../SodaListContainer/SodaListContainer";
 import SocialCard from "../SocialCard/SocialCard";
 import Forecast from "../Forecast/Forecast";
 import Calculator from "../Calculator/Calculator";
-import mainContentStyle from './MainContent.module.css';
+import mainContentStyle from './Content.module.css';
 
 
-export const MainContent = props => {
+export const Content = props => {
 	return (
 		<div id="Main - Content" className={mainContentStyle.mainContent}>
 			{props.page === 'home' ? <Home/> : null}

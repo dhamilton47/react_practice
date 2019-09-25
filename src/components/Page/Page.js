@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { MainContent } from "./MainContent";
-import { MainFooter } from "./MainFooter";
+import { Content } from "./Content";
+import { Footer } from "./Footer";
+import { Nav } from "../Nav/Nav";
 
 class Page extends Component {
 	render() {
 		return (
 			<div>
-				<MainContent page={this.props.page}/>
-				<MainFooter routes={this.props.routes}/>
+				<Nav routes={this.props.routes}/>
+
+				<Content page={this.props.page}/>
+				<Footer routes={this.props.routes}/>
 			</div>
 		)
 	}

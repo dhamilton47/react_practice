@@ -14,9 +14,9 @@ class NumberKey extends Component {
 		);
 	}
 }
-/*
+
 NumberKey.propTypes = {
 	onClick: PropTypes.func.isRequired
 };
-*/
+
 export default NumberKey;

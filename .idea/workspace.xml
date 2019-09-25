@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/ListLink.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/ListSeparator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/MainContent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/MainFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SodaListContainer/SodaListContainer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Bowling/Bowling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Bowling/Bowling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/Calculator.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calculator/NumberKey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/Forecast.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/Forecast.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/MainContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/MainContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/ListLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/ListLink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/MainFooter.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialCard/SocialCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SodaListContainer/SodaListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SodaListContainer/SodaListContainer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +216,7 @@
       <workItem from="1569005389836" duration="86000" />
       <workItem from="1569205104831" duration="296000" />
       <workItem from="1569206037320" duration="183000" />
-      <workItem from="1569206332882" duration="14078000" />
+      <workItem from="1569206332882" duration="16266000" />
     </task>
     <servers />
   </component>

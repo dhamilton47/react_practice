@@ -6,8 +6,8 @@ class Page extends Component {
 	render() {
 		return (
 			<div>
-				<MainContent page={this.props.page} settings={this.props.settings}/>
-				<MainFooter routes={this.props.settings.lists.routes}/>
+				<MainContent page={this.props.page}/>
+				<MainFooter routes={this.props.routes}/>
 			</div>
 		)
 	}

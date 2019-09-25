@@ -1,14 +1,17 @@
 .base {
     background-color: white;
     box-sizing: border-box;
-    display:   inline-block;
+    display:   block;
     font-family: Verdana, Geneva, sans-serif !important;
     font-size: 13px;
     line-height: 1.5;
     list-style-type: none;
-    margin: 0;
+    margin: Auto;
+    margin-top: 1rem;
     padding: 0;
+    text-align: center;
     text-decoration: none;
+    width: 1000px;
     -webkit-font-smoothing: antialiased;
 }
 

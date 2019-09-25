@@ -8,7 +8,6 @@ class Page extends Component {
 		return (
 			<div>
 				<Nav routes={this.props.routes}/>
-
 				<Content page={this.props.page}/>
 				<Footer routes={this.props.routes}/>
 			</div>

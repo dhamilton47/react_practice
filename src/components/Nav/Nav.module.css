@@ -1,0 +1,41 @@
+.nav {
+    background-color: cornflowerblue;
+}
+
+.base {
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    display:   block;
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 13px;
+    line-height: 1.5;
+    list-style-type: none;
+    margin: Auto;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 1000px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.base li {
+    display: inline-block;
+    /*padding-inline-start: 4px;
+    padding-inline: 15px;*/
+    padding: 1rem 15px;
+    text-align: -webkit-match-parent;
+}
+
+.base li:hover {
+    background-color: aliceblue;
+}
+
+.base li a {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.1s linear;
+}

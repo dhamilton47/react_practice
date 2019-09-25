@@ -1,18 +1,4 @@
-* {
-    box-sizing: border-box;
-}
-
-/* Universal Styles */
-
-body,
-html,
-#root {
-    height: 100%;
-}
-
-html {
-    font-size: 18px;
-}
+/* Social Card App Universal Styles */
 
 .social-card-tb {
 /*    border: red solid 1px; */
@@ -22,6 +8,7 @@ html {
             'top'
             'bottom';
     margin: auto;
+    margin-top: 150px;
     max-width: 300px;
     padding: 0;
     text-align: left;
@@ -75,10 +62,6 @@ html {
     border-bottom-right-radius: 5px;
     grid-area: bottom;
     margin: 0;
-}
-
-h1 {
-    font-size: 2rem;
 }
 
 .card {

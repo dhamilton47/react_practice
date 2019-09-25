@@ -1,66 +1,19 @@
+/* Site Universal Styles */
+
 * {
     box-sizing: border-box;
 }
 
-.App {
-    border: red solid 1px;
-    display: grid;
-    grid-template-areas:
-            'header header header header header header header header header header header header'
-            'nav nav nav nav nav nav nav nav nav nav nav nav'
-            'settings settings settings settings settings settings settings settings settings settings settings settings'
-            'team team team team team team team team team team team team '
-            'game game game game game game game game game scoring scoring scoring'
-            'match match match match match match stats stats stats stats stats stats'
-            'footer footer footer footer footer footer footer footer footer footer footer footer';
-    grid-template-columns: repeat(12, 1fr);
-/*    grid-template-rows: repeat(2, 1fr);  */
-    margin: auto;
-    max-width: 1000px;
-    text-align: center;
+body,
+html,
+#root {
+    height: 100%;
+}
+
+html {
+    font-size: 18px;
 }
 
 h1 {
-    border: red solid 1px;
     font-size: 2rem;
-}
-
-.item1 {
-    border: red solid 1px;
-    grid-area: header;
-}
-
-.item2 {
-    border: red solid 1px;
-    grid-area: footer;
-}
-
-.navigation {
-    border: red solid 1px;
-    grid-area: nav;
-}
-
-.settings {
-    border: red solid 1px;
-    grid-area: settings
-}
-
-.game {
-    border: red solid 1px;
-    grid-area: game
-}
-
-.scoring {
-    border: red solid 1px;
-    grid-area: scoring;
-}
-
-.match {
-    border: red solid 1px;
-    grid-area: match;
-}
-
-.stats {
-    border: red solid 1px;
-    grid-area: stats;
 }

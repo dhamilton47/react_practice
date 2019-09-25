@@ -1,23 +1,5 @@
 /* Universal Styles */
 
-* {
-    box-sizing: border-box;
-}
-
-body,
-html,
-#root {
-    height: 100%;
-}
-
-html {
-    font-size: 26px;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
 .calculator{
     border: black solid 2px;
     display: flex;

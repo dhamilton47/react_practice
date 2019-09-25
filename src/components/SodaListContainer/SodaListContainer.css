@@ -1,0 +1,10 @@
+/* Soda List App Universal Styles */
+
+.sodaList{
+    border: black solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 150px;
+    width: 250px;
+}

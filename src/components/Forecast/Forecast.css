@@ -1,22 +1,4 @@
-/* Universal Styles */
-
-* {
-    box-sizing: border-box;
-}
-
-body,
-html,
-#root {
-    height: 100%;
-}
-
-html {
-    font-size: 18px;
-}
-
-h1 {
-    font-size: 2rem;
-}
+/* Forecast App Universal Styles */
 
 .card-container {
     border-top: lightgray solid 1px;
@@ -27,6 +9,7 @@ h1 {
     font-family: 'Work Sans', sans-serif;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 150px;
     padding: 0;
     width: 501px
     /*text-align: left;*/

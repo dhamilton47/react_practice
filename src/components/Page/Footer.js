@@ -14,9 +14,9 @@ export const Footer = props => {
 				<ListSeparator/>
 				<ListLink location={props.routes.social_card}/>
 				<ListSeparator/>
-				<ListLink location={props.routes.calculator}/>
-				<ListSeparator/>
 				<ListLink location={props.routes.forecast}/>
+				<ListSeparator/>
+				<ListLink location={props.routes.calculator}/>
 			</ul>
 		</footer>
 	);

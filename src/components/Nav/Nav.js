@@ -9,8 +9,8 @@ export const Nav = props => {
 				<ListLink location={props.routes.home}/>
 				<ListLink location={props.routes.soda_list}/>
 				<ListLink location={props.routes.social_card}/>
-				<ListLink location={props.routes.calculator}/>
 				<ListLink location={props.routes.forecast}/>
+				<ListLink location={props.routes.calculator}/>
 			</ul>
 		</header>
 	);

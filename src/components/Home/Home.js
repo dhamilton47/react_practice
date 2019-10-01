@@ -3,9 +3,11 @@ import './Home.css';
 
 class Home extends Component {
 	render() {
-		return <div className="homeStyle">
-			<p>This is an extremely simple page</p>
-		</div>
+		return (
+			<div className="homeStyle">
+				<h1>This is an extremely simple Landing Page</h1>
+			</div>
+		)
 	}
 }
 

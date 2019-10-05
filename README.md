@@ -2,6 +2,8 @@
 
 This repository contains practice work creating React components.  The projects are suggestions from [Dave Ceddia's blog](https://daveceddia.com/react-practice-projects/).
 
+I am also learning TDD in a JS/React environment in this repository.
+
 At this point the components are all classes or functions.  There are no hooks used.
 
 #### Soda List
@@ -20,6 +22,7 @@ The next order of business for this project would be developing a module to hand
 
 #### Calculator
 
+This is your 'simple' 4-function calculator.  Ok, a little more complex than I had hoped.  Still working on the logic for the 'function' keys.
 
-   
+---   
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

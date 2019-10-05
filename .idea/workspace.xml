@@ -4,8 +4,7 @@
     <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/components.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/SodaListContainer.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +213,9 @@
       <workItem from="1569005389836" duration="86000" />
       <workItem from="1569205104831" duration="296000" />
       <workItem from="1569206037320" duration="183000" />
-      <workItem from="1569206332882" duration="32900000" />
+      <workItem from="1569206332882" duration="34011000" />
+      <workItem from="1570229019925" duration="85000" />
+      <workItem from="1570229201018" duration="2605000" />
     </task>
     <servers />
   </component>

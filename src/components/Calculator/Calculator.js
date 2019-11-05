@@ -32,26 +32,29 @@ class Calculator extends Component {
 	}
 
 	handleNumber(value) {
-		const nEF = this.state.newEntryFlag;
-		let dT = this.state.displayText;
-
-		if (nEF) dT = String(this.round(this.state.enteredValue, 4));
-
-		if (! (dT.includes('.') && value === '.')) {
-			if (dT === '0') {
-				if (value === '.') {
-					this.setState({displayText: dT.concat(value)});
+		let {newEntryFlag, displayText, radixPlaces} = this.state;
+		
+		if (newEntryFlag && value !== ".") {
+			displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
+			this.setState(() => ({displayText: displayText}));
+		} else {
+			if (! (displayText.includes('.') && value === '.')) {
+				if (displayText === '0') {
+					if (value === '.') {
+						this.setState({displayText: displayText.concat(value)});
+					} else {
+						this.setState({displayText: value});
+					}
 				} else {
-					this.setState({displayText: value});
+					this.setState({displayText: displayText.concat(value)});
 				}
-			} else {
-				this.setState({displayText: dT.concat(value)});
 			}
+
 		}
 
-		if (nEF) this.setState({newEntryFlag: false});
+		if (newEntryFlag) this.setState(() => ({newEntryFlag: false}));
 //		this.diagnostics(value);
-	}
+}
 
 	handleFunction(value) {
 		const m = this.state.memory;

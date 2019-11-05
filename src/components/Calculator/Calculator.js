@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './Calculator.css';
 import Display from "./Display";
-import FunctionKey from "./FunctionKey";
-import NumberKey from "./NumberKey";
+//import FunctionKey from "./FunctionKey";
+//import NumberKey from "./NumberKey";
+import CalculatorKey from './CalculatorKey';
 
 class Calculator extends Component {
 	constructor(props) {
@@ -144,89 +145,89 @@ class Calculator extends Component {
 		return (
 			<div className="calculator">
 				<Display displayText={this.state.displayText}/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-lg'}
-					function={'clear'}
+					value={'clear'}
 					onClick={() => this.handleFunction('clear')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'+'}
+					value={'+'}
 					onClick={() => this.handleFunction('+')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'7'}
 					onClick={() => this.handleNumber('7')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'8'}
 					onClick={() => this.handleNumber('8')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'9'}
 					onClick={() => this.handleNumber('9')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'-'}
+					value={'-'}
 					onClick={() => this.handleFunction('-')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'4'}
 					onClick={() => this.handleNumber('4')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'5'}
 					onClick={() => this.handleNumber('5')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'6'}
 					onClick={() => this.handleNumber('6')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'*'}
+					value={'*'}
 					onClick={() => this.handleFunction('*')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'1'}
 					onClick={() => this.handleNumber('1')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'2'}
 					onClick={() => this.handleNumber('2')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'3'}
 					onClick={() => this.handleNumber('3')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'/'}
+					value={'/'}
 					onClick={() => this.handleFunction('/')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-md'}
 					value={'0'}
 					onClick={() => this.handleNumber('0')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'.'}
 					onClick={() => this.handleNumber('.')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'='}
+					value={'='}
 					onClick={() => this.handleFunction('=')}
 				/>
 			</div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class NumberKey extends Component {
 	render() {
@@ -14,9 +13,5 @@ class NumberKey extends Component {
 		);
 	}
 }
-
-NumberKey.propTypes = {
-	onClick: PropTypes.func.isRequired
-};
 
 export default NumberKey;

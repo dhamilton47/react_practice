@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/components.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/SodaListContainer.test.js" afterDir="false" />
-    </list>
+    <list default="true" id="bec624c2-3b64-44f7-8f28-568ff42183e1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Nav" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../agile-poker-2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -215,7 +211,7 @@
       <workItem from="1569206037320" duration="183000" />
       <workItem from="1569206332882" duration="34011000" />
       <workItem from="1570229019925" duration="85000" />
-      <workItem from="1570229201018" duration="2605000" />
+      <workItem from="1570229201018" duration="3206000" />
     </task>
     <servers />
   </component>

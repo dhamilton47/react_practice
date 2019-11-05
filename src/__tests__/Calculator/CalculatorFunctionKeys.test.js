@@ -2,95 +2,75 @@ import React from 'react';
 import { expect } from 'chai';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ReactDOM from'react-dom';
+//import ReactDOM from'react-dom';
 
-import Calculator from '../components/Calculator/Calculator';
-import Display from '../components/Calculator/Display';
-import FunctionKey from '../components/Calculator/FunctionKey';
-import NumberKey from '../components/Calculator/NumberKey';
+import Calculator from '../../components/Calculator/Calculator'
+//import Display from '../../components/Calculator/Display';
+//import FunctionKey from '../../components/Calculator/FunctionKey';
+//import NumberKey from '../../components/Calculator/NumberKey';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Calculator', () => {
-	it('renders without crashing', () => {
-		const div = document.createElement('div');
-		ReactDOM.render(<Calculator/>, div);
-		ReactDOM.unmountComponentAtNode(div);
-	});
-
-	it('should render Display, FunctionKey and Number Key', () => {
+describe('Calculator "+" key', () => {
+	it('should', () => {
 		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.containsAllMatchingElements([
-			<Display/>,
-			<FunctionKey/>,
-			<NumberKey/>
-		]));
-	});
-
-	it('should start with a memory value of 0', () => {
+		//	Initial State Validation
+		expect(wrapper.state().memory).to.equal(0)
+	})
+});
+/*
+	it('should set state properly during the following sequence of keys clicks "1+1="', () => {
 		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('memory')).to.equal(0);
+//	Initial State Validation
+		expect(wrapper.state().memory).to.equal(0)
+		expect(wrapper.state().enteredValue).to.equal(0)
+		expect(wrapper.state().displayText).to.equal('0')
+		expect(wrapper.state().newEntryFlag).to.equal(true)
+		expect(wrapper.state().pendingFunctionFlag).to.equal(false);
+		expect(wrapper.state().function).to.equal('');
+
+		wrapper.instance().handleNumber('1');
+		
+		expect(wrapper.state().memory).to.equal(0)
+		expect(wrapper.state().enteredValue).to.equal(0)
+		expect(wrapper.state().displayText).to.equal('1')
+		expect(wrapper.state().newEntryFlag).to.equal(false)
+		expect(wrapper.state().pendingFunctionFlag).to.equal(false);
+		expect(wrapper.state().function).to.equal('');
+		
+		wrapper.instance().handleFunction('+');
+		
+		expect(wrapper.state().memory).to.equal(1)
+		expect(wrapper.state().enteredValue).to.equal('1')
+		expect(wrapper.state().displayText).to.equal('1')
+		expect(wrapper.state().newEntryFlag).to.equal(true)
+		expect(wrapper.state().pendingFunctionFlag).to.equal(true);
+		expect(wrapper.state().function).to.equal('+');
 	});
 
-	it('should start with a enteredValue of 0', () => {
-		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('enteredValue')).to.equal(0);
-	});
-
-	it('should start with a displayText value of "0"', () => {
-		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('displayText')).to.equal('0');
-	});
-
-	it('should start with newEntryFlag equal true', () => {
-		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('newEntryFlag')).to.equal(true);
-	});
-
-	it('should start with pendingFunctionFlag equal false', () => {
-		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('pendingFunctionFlag')).to.equal(false);
-	});
-
-	it('should start with function equal ""', () => {
-		const wrapper = shallow(<Calculator/>);
-		expect(wrapper.state('function')).to.equal('');
-	});
-
-	it('should display the 1 when the 1 key is clicked', () =>{
+	it('should set memory to enteredValue when the "+" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
 		wrapper.instance().handleNumber('1');
+		expect(wrapper.state('memory')).to.equal(0);
+		wrapper.instance().handleFunction('+');
+		expect(wrapper.state('memory')).to.equal(1);
+		wrapper.instance().handleNumber('1');
+		expect(wrapper.state('memory')).to.equal(1);
+		wrapper.instance().handleFunction('=');
+		expect(wrapper.state('memory')).to.equal(2);
+	});
+
+	it('should show the current calculated value in displayText when the "+" functionKey is clicked', () => {
+		const wrapper = shallow(<Calculator/>);
+		wrapper.instance().handleNumber('1');
+		wrapper.instance().handleFunction('+');
 		expect(wrapper.state('displayText')).to.equal('1');
 	});
 
-	it('should display "0." if the display was "0" and "." is clicked', () => {
-		const wrapper = shallow(<Calculator/>);
-		wrapper.instance().handleNumber('.');
-		expect(wrapper.state('displayText')).to.equal('0.');
-	});
-
-	it('allows only one decimal point to be entered when entering a number', () => {
-		const wrapper = shallow(<Calculator/>);
-		wrapper.instance().handleNumber('.');
-		expect(wrapper.state('displayText')).to.equal('0.');
-		wrapper.instance().handleNumber('.');
-		expect(wrapper.state('displayText')).to.equal('0.');
-	});
-	/*
-	it('passes handleClick to NumberKey', () => {
-		const wrapper = shallow(<Calculator/>);
-		const numberKey = wrapper.find(NumberKey).first();
-		const handleNumber = wrapper.instance().handleNumber;
-		expect(numberKey.prop('onClick')).to.eql(handleNumber);
-	});
-	*/
-	it('should set the pendingFunctionFlag to true and function state to "+" when the "+" key is clicked', () => {
-		const wrapper = shallow(<Calculator/>);
-		wrapper.instance().handleFunction('+');
-		expect(wrapper.state('pendingFunctionFlag')).to.equal(true);
-		expect(wrapper.state('function')).to.equal('+');
-	});
-
+});
+*/
+/*
+describe('Calculator function keys', () => {
 	it('should set the pendingFunctionFlag to true and function state to "-" when the "-" key is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
 		wrapper.instance().handleFunction('-');
@@ -133,13 +113,6 @@ describe('Calculator', () => {
 		expect(wrapper.state('function')).to.equal('+');
 	});
 
-	it('should set memory = enteredValue when the "+" functionKey is clicked', () => {
-		const wrapper = shallow(<Calculator/>);
-		wrapper.instance().handleNumber('1');
-		wrapper.instance().handleFunction('+');
-		expect(wrapper.state('memory')).to.equal(1);
-	});
-
 	it('should set memory = enteredValue when the "-" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
 		wrapper.instance().handleNumber('1');
@@ -173,7 +146,7 @@ describe('Calculator', () => {
 		wrapper.instance().handleNumber('1');
 		wrapper.instance().handleFunction('+');
 		wrapper.instance().handleNumber('1');
-		wrapper.instance().handleFunction('+');
+		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('displayText')).to.equal('2');
 	});
 
@@ -182,7 +155,7 @@ describe('Calculator', () => {
 		wrapper.instance().handleNumber('1');
 		wrapper.instance().handleFunction('-');
 		wrapper.instance().handleNumber('1');
-		wrapper.instance().handleFunction('+');
+		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('displayText')).to.equal('0');
 	});
 
@@ -191,7 +164,7 @@ describe('Calculator', () => {
 		wrapper.instance().handleNumber('2');
 		wrapper.instance().handleFunction('*');
 		wrapper.instance().handleNumber('3');
-		wrapper.instance().handleFunction('+');
+		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('displayText')).to.equal('6');
 	});
 
@@ -200,26 +173,31 @@ describe('Calculator', () => {
 		wrapper.instance().handleNumber('1');
 		wrapper.instance().handleFunction('/');
 		wrapper.instance().handleNumber('2');
-		wrapper.instance().handleFunction('+');
+		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('displayText')).to.equal('0.5');
 	});
 
-	it('should clear the pendingFunctionFlag state when the "=" functionKey is clicked', () => {
+	it('should set the pendingFunctionFlag state to false when the "=" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
+		wrapper.instance().handleNumber('1');
+		wrapper.instance().handleFunction('/');
+		wrapper.instance().handleNumber('2');
 		wrapper.instance().handleFunction('=');
-		expect(wrapper.state('pendingFunctionFlag')).to.equal(false);
+		expect(wrapper.state().pendingFunctionFlag).to.equal(false);
 	});
 
 	it('should clear the memory state when the "=" functionKey is clicked', () => {
-		const wrapper = shallow(<Calculator/>);
+		const wrapper = shallow(<Calculator/>);		
 		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('memory')).to.equal(0);
 	});
 
 	it('should clear the displayText state when the "clear" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
+		wrapper.instance().handleNumber('1');
 		wrapper.instance().handleFunction('clear');
 		expect(wrapper.state('displayText')).to.equal('0');
 	});
 
 });
+*/

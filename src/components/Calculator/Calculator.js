@@ -21,6 +21,7 @@ class Calculator extends Component {
 		this.handleNumber = this.handleNumber.bind(this);
 		this.handleFunction = this.handleFunction.bind(this);
 	}
+
 	diagnostics(value) {
 		console.log('Button pressed: ' + value);
 		console.log('New entry setting: ' + this.state.newEntryFlag);
@@ -31,66 +32,66 @@ class Calculator extends Component {
 	}
 
 	handleNumber(value) {
-		const nEF = this.state.newEntryFlag;
-		let dT = this.state.displayText;
+		const newEntryFlag = this.state.newEntryFlag;
+		let displayText = this.state.displayText;
 
-		if (nEF) dT = String(this.round(this.state.enteredValue, 4));
+		if (newEntryFlag) displayText = String(this.round(this.state.enteredValue, 4));
 
-		if (! (dT.includes('.') && value === '.')) {
-			if (dT === '0') {
+		if (! (displayText.includes('.') && value === '.')) {
+			if (displayText === '0') {
 				if (value === '.') {
-					this.setState({displayText: dT.concat(value)});
+					this.setState({displayText: displayText.concat(value)});
 				} else {
 					this.setState({displayText: value});
 				}
 			} else {
-				this.setState({displayText: dT.concat(value)});
+				this.setState({displayText: displayText.concat(value)});
 			}
 		}
 
-		if (nEF) this.setState({newEntryFlag: false});
+		if (newEntryFlag) this.setState({newEntryFlag: false});
 //		this.diagnostics(value);
 	}
 
 	handleFunction(value) {
-		const m = this.state.memory;
-		const eV = Number(this.state.displayText);
+		const memory = this.state.memory;
+		const enteredValue = Number(this.state.displayText);
 
 		if (this.state.pendingFunctionFlag) {
 			switch (this.state.function) {
 				case '+':
 //					result = this.state.memory + Number(this.state.displayText);
 					this.setState({
-						memory: m + eV,
-						enteredValue: eV,
-						displayText: String(this.round(m + eV, this.state.radixPlaces)),
+						memory: memory + enteredValue,
+						enteredValue: enteredValue,
+						displayText: String(this.round(memory + enteredValue, this.state.radixPlaces)),
 						pendingFunctionFlag: true,
 						function: value
 					});
 					break;
 				case '-':
 					this.setState({
-						memory: m - eV,
-						enteredValue: eV,
-						displayText: String(this.round(m - eV, this.state.radixPlaces)),
+						memory: memory - enteredValue,
+						enteredValue: enteredValue,
+						displayText: String(this.round(memory - enteredValue, this.state.radixPlaces)),
 						pendingFunctionFlag: true,
 						function: value
 					});
 					break;
 				case '*':
 					this.setState({
-						memory: m * eV,
-						enteredValue: eV,
-						displayText: String(this.round(m * eV, this.state.radixPlaces)),
+						memory: memory * enteredValue,
+						enteredValue: enteredValue,
+						displayText: String(this.round(memory * enteredValue, this.state.radixPlaces)),
 						pendingFunctionFlag: true,
 						function: value
 					});
 					break;
 				case '/':
 					this.setState({
-						memory: m / eV,
-						enteredValue: eV,
-						displayText: String(this.round(m / eV, this.state.radixPlaces)),
+						memory: memory / enteredValue,
+						enteredValue: enteredValue,
+						displayText: String(this.round(memory / enteredValue, this.state.radixPlaces)),
 						pendingFunctionFlag: true,
 						function: value
 					});
@@ -98,8 +99,8 @@ class Calculator extends Component {
 				case '=':
 					this.setState({
 						memory: 0,
-						enteredValue: eV,
-						displayText: String(this.round(m, this.state.radixPlaces)),
+						enteredValue: enteredValue,
+						displayText: String(this.round(memory, this.state.radixPlaces)),
 						pendingFunctionFlag: false,
 						function: ''
 					});
@@ -117,7 +118,7 @@ class Calculator extends Component {
 			});
 		} else {
 			this.setState({
-				memory: eV,
+				memory: enteredValue,
 				enteredValue: 0,
 				newEntryFlag: true,
 				pendingFunctionFlag: true,

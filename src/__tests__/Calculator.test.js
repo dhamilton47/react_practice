@@ -207,11 +207,13 @@ describe('Calculator', () => {
 	it('should clear the pendingFunctionFlag state when the "=" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
 		wrapper.instance().handleFunction('=');
-		expect(wrapper.state('pendingFunctionFlag')).to.equal(false);
+		//expect(wrapper.state('pendingFunctionFlag')).to.equal(false);
+		expect(wrapper.state().pendingFunctionFlag).to.equal(false);
 	});
 
 	it('should clear the memory state when the "=" functionKey is clicked', () => {
 		const wrapper = shallow(<Calculator/>);
+
 		wrapper.instance().handleFunction('=');
 		expect(wrapper.state('memory')).to.equal(0);
 	});

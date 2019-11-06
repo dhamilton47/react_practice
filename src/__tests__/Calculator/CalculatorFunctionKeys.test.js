@@ -183,6 +183,7 @@ describe('Calculator function keys', () => {
 		wrapper.instance().handleFunction('/');
 		wrapper.instance().handleNumber('2');
 		wrapper.instance().handleFunction('=');
+		//expect(wrapper.state('pendingFunctionFlag')).to.equal(false);
 		expect(wrapper.state().pendingFunctionFlag).to.equal(false);
 	});
 

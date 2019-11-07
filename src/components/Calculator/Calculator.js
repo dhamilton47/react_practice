@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './Calculator.css';
 import Display from "./Display";
-import FunctionKey from "./FunctionKey";
-import NumberKey from "./NumberKey";
+import CalculatorKey from "./CalculatorKey";
+//import FunctionKey from "./FunctionKey";
+//import NumberKey from "./NumberKey";
 
 class Calculator extends Component {
 	constructor(props) {
@@ -11,6 +12,9 @@ class Calculator extends Component {
 		this.state = {
 			memory: 0,
 			enteredValue: 0,
+			lastEnteredValue: 0,
+			currentKey: '',
+			previousKey: '',
 			displayText: '0',
 			newEntryFlag: true,
 			pendingFunctionFlag: false,
@@ -24,18 +28,42 @@ class Calculator extends Component {
 
 	diagnostics(value) {
 		console.log('Button pressed: ' + value);
+		console.log('Last entered value: ' + this.state.lastEnteredValue);
 		console.log('New entry setting: ' + this.state.newEntryFlag);
 		console.log('Displayed value: ' + this.state.displayText);
+		console.log('Current key: ' + this.state.currentKey);
+		console.log('Previous key: ' + this.state.previousKey);
 		console.log('Stored value: ' + this.state.memory);
 		console.log('Pending function setting: ' + this.state.pendingFunctionFlag);
-		console.log('Function: ' + this.state.function);
+		console.log('Function: ' + this.state.functionKey);
 	}
 
 	handleNumber(value) {
-		const newEntryFlag = this.state.newEntryFlag;
-		let displayText = this.state.displayText;
+		let { 
+			displayText, 
+			newEntryFlag, 
+//			memory, 
+//			pendingFunctionFlag, 
+//			functionKey, 
+//			lastEnteredValue, 
+			currentKey, 
+//			previousKey
+		} = this.state;
 
-		if (newEntryFlag) displayText = String(this.round(this.state.enteredValue, 4));
+		if (newEntryFlag) {
+			displayText = String(this.round(Number(value), 4));
+			this.setState({
+			//	memory: 0,
+				enteredValue: value,
+			//	lastEnteredValue: 0,
+				currentKey: value,
+				previousKey: currentKey,
+				displayText: displayText,
+				newEntryFlag: false,
+				pendingFunctionFlag: false,
+				function: ''	
+			});
+		}
 
 		if (! (displayText.includes('.') && value === '.')) {
 			if (displayText === '0') {
@@ -50,7 +78,7 @@ class Calculator extends Component {
 		}
 
 		if (newEntryFlag) this.setState({newEntryFlag: false});
-//		this.diagnostics(value);
+		this.diagnostics(value);
 	}
 
 	handleFunction(value) {
@@ -126,7 +154,7 @@ class Calculator extends Component {
 //				displayText: ''
 			});
 		}
-//		this.diagnostics(value);
+		this.diagnostics(value);
 	/*
 		this.setState({
 			pendingFunction: (this.state.pendingFunction).concat(value),
@@ -145,89 +173,89 @@ class Calculator extends Component {
 		return (
 			<div className="calculator">
 				<Display displayText={this.state.displayText}/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-lg'}
-					function={'clear'}
+					value={'clear'}
 					onClick={() => this.handleFunction('clear')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'+'}
+					value={'+'}
 					onClick={() => this.handleFunction('+')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'7'}
 					onClick={() => this.handleNumber('7')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'8'}
 					onClick={() => this.handleNumber('8')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'9'}
 					onClick={() => this.handleNumber('9')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'-'}
+					value={'-'}
 					onClick={() => this.handleFunction('-')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'4'}
 					onClick={() => this.handleNumber('4')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'5'}
 					onClick={() => this.handleNumber('5')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'6'}
 					onClick={() => this.handleNumber('6')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'*'}
+					value={'*'}
 					onClick={() => this.handleFunction('*')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'1'}
 					onClick={() => this.handleNumber('1')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'2'}
 					onClick={() => this.handleNumber('2')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'3'}
 					onClick={() => this.handleNumber('3')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'/'}
+					value={'/'}
 					onClick={() => this.handleFunction('/')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-md'}
 					value={'0'}
 					onClick={() => this.handleNumber('0')}
 				/>
-				<NumberKey
+				<CalculatorKey
 					styling={'btn-sm'}
 					value={'.'}
 					onClick={() => this.handleNumber('.')}
 				/>
-				<FunctionKey
+				<CalculatorKey
 					styling={'btn-sm'}
-					function={'='}
+					value={'='}
 					onClick={() => this.handleFunction('=')}
 				/>
 			</div>

@@ -36,29 +36,94 @@ class Calculator extends Component {
 	}
 
 	handleNumber(value) {
-		let {newEntryFlag, displayText, radixPlaces} = this.state;
-		
-		if (newEntryFlag && value !== ".") {
-			displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
-			this.setState(() => ({displayText: displayText}));
-		} else {
-			if (! (displayText.includes('.') && value === '.')) {
-				if (displayText === '0') {
-					if (value === '.') {
-						this.setState({displayText: displayText.concat(value)});
-					} else {
-						this.setState({displayText: value});
-					}
-				} else {
-					this.setState({displayText: displayText.concat(value)});
-				}
-			}
+		let {
+			currentKey,
+			displayText, 
+//			enteredValue,
+//			functionKey,
+//			lastEnteredValue,
+//			memory,
+			newEntryFlag, 
+//			pendingFunctionFlag,
+//			previousKey, 
+			radixPlaces
+		} = this.state;
 
+		if (newEntryFlag) {
+			if (value === ".") {
+				this.setState({ 
+					currentKey: '.',
+					displayText: '0.',
+					enteredValue: '.',
+					functionKey: '',
+				//	lastEnteredValue: 0,
+				//	memory: 0,
+					newEntryFlag: false,
+					previousKey: '0',
+					pendingFunctionFlag: false
+				});
+			} else {
+				displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
+				this.setState({
+					currentKey: value,
+					displayText: displayText,
+					enteredValue: value,
+					functionKey: '',
+				//	lastEnteredValue: 0,
+				//	memory: 0,
+					newEntryFlag: false,
+					previousKey: currentKey,
+					pendingFunctionFlag: false
+				});
+			}
 		}
 
-		if (newEntryFlag) this.setState(() => ({newEntryFlag: false}));
-//		this.diagnostics(value);
-}
+		if (!newEntryFlag) {
+			if (value === '.') {
+				console.log(displayText);
+				if (displayText.includes('.')) {
+					this.setState({
+						currentKey: value,
+						displayText: displayText,
+						enteredValue: '',
+					//	functionKey: ''
+					//	lastEnteredValue: 0,
+					//	memory: 0,
+					//	newEntryFlag: false,
+					//	pendingFunctionFlag: false,
+						previousKey: currentKey,
+					});
+				} else {
+					this.setState({
+						currentKey: value,
+						displayText: displayText.concat(value),
+						enteredValue: value,
+					//	functionKey: ''
+					//	lastEnteredValue: 0,
+					//	memory: 0,
+					//	newEntryFlag: false,
+					//	pendingFunctionFlag: false,
+						previousKey: currentKey,
+					});
+				}
+			} else {
+				displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
+				this.setState({
+					currentKey: value,
+					displayText: displayText,
+					enteredValue: value,
+					functionKey: '',
+				//	lastEnteredValue: 0,
+				//	memory: 0,
+					newEntryFlag: false,
+					previousKey: currentKey,
+					pendingFunctionFlag: false
+				});
+			}
+		}
+		
+		this.diagnostics(value);
+	}
 
 	handleFunction(value) {
 		const m = this.state.memory;

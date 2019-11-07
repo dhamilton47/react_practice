@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './Calculator.css';
 import Display from "./Display";
-//import FunctionKey from "./FunctionKey";
-//import NumberKey from "./NumberKey";
 import CalculatorKey from './CalculatorKey';
 
 class Calculator extends Component {
@@ -10,12 +8,15 @@ class Calculator extends Component {
 		super(props);
 
 		this.state = {
-			memory: 0,
-			enteredValue: 0,
+			currentKey: '',
 			displayText: '0',
+			enteredValue: 0,
+			functionKey: '',
+			lastEnteredValue: 0,
+			memory: 0,
 			newEntryFlag: true,
 			pendingFunctionFlag: false,
-			function: '',
+			previousKey: '',
 			radixPlaces: 4
 		};
 
@@ -24,11 +25,14 @@ class Calculator extends Component {
 	}
 	diagnostics(value) {
 		console.log('Button pressed: ' + value);
+		console.log('Last entered value: ' + this.state.lastEnteredValue);
 		console.log('New entry setting: ' + this.state.newEntryFlag);
 		console.log('Displayed value: ' + this.state.displayText);
+		console.log('Current key: ' + this.state.currentKey);
+		console.log('Previous key: ' + this.state.previousKey);
 		console.log('Stored value: ' + this.state.memory);
 		console.log('Pending function setting: ' + this.state.pendingFunctionFlag);
-		console.log('Function: ' + this.state.function);
+		console.log('Function: ' + this.state.functionKey);
 	}
 
 	handleNumber(value) {

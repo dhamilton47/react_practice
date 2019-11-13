@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CalculatorKey extends Component {
-	render() {
-		return (
-			<button
-				type="button"
-				className={this.props.styling}
-				onClick={this.props.onClick}
-			>
-				{this.props.value}
-			</button>
-		);
-	}
+export const CalculatorKey = props=> {
+	return (
+		<button
+			type="button"
+			className={props.styling}
+			onClick={props.onClick}
+		>
+			{props.value}
+		</button>
+	);
 }
-
-export default CalculatorKey;

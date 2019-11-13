@@ -5,8 +5,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import ReactDOM from'react-dom';
 
 import Calculator from '../../components/Calculator/Calculator'
-import Display from '../../components/Calculator/Display';
-import CalculatorKey from '../../components/Calculator/CalculatorKey';
+import { Display } from '../../components/Calculator/Display';
+import { CalculatorKey } from '../../components/Calculator/CalculatorKey';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Calculator.css';
-import Display from "./Display";
-import CalculatorKey from './CalculatorKey';
+import { Display } from "./Display";
+import { CalculatorKey } from './CalculatorKey';
 
 class Calculator extends Component {
 	constructor(props) {

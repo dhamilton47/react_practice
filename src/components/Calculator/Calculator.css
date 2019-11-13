@@ -13,6 +13,9 @@
 
 .display {
     border-bottom: buttonface outset 1px;
+    font-family: Cambria, sans-serif;
+    font-size: 26px;
+    font-weight: normal;
     height: 50px;
     text-align: right;
     padding: 11px;

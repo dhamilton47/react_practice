@@ -1,11 +1,13 @@
 .mainContent {
-    background-color: #f6f6ef;
+    background-color: #fff;
     box-sizing: border-box;
     color: black;
     display: block;
     font-family: Verdana, Geneva, sans-serif !important;
     font-size: 13px;
+    margin: 0 auto;
     position: relative;
+    width: 600px;
     -webkit-font-smoothing: antialiased;
 }
 

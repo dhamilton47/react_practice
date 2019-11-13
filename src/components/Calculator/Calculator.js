@@ -23,6 +23,7 @@ class Calculator extends Component {
 		this.handleNumber = this.handleNumber.bind(this);
 		this.handleFunction = this.handleFunction.bind(this);
 	}
+
 	diagnostics(value) {
 		console.log('Button pressed: ' + value);
 		console.log('Last entered value: ' + this.state.lastEnteredValue);
@@ -169,6 +170,7 @@ class Calculator extends Component {
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
+
 					});
 //					this.setState(() => ({enteredValue: enteredValue}))
 					break;
@@ -183,6 +185,7 @@ class Calculator extends Component {
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
+
 					});
 					break;
 				case '*':
@@ -216,6 +219,7 @@ class Calculator extends Component {
 //					console.log(this.state.pendingFunctionFlag);
 
 					this.setState({
+
 //						currentKey: value,
 //						displayText: String(this.round(memory, radixPlaces)),
 //						enteredValue: enteredValue,
@@ -225,6 +229,7 @@ class Calculator extends Component {
 						newEntryFlag: true,
 //						pendingFunctionFlag: !pendingFunctionFlag,
 //						previousKey: previousKey
+
 					});
 					this.setState((pendingFunctionFlag) => ({pendingFunctionFlag: !pendingFunctionFlag}))
 //					console.log(this.state.pendingFunctionFlag);

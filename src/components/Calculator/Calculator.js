@@ -27,12 +27,17 @@ class Calculator extends Component {
 		console.log('Button pressed: ' + value);
 		console.log('Last entered value: ' + this.state.lastEnteredValue);
 		console.log('New entry setting: ' + this.state.newEntryFlag);
-		console.log('Displayed value: ' + this.state.displayText);
+		console.log('Displayed text: ' + this.state.displayText);
 		console.log('Current key: ' + this.state.currentKey);
 		console.log('Previous key: ' + this.state.previousKey);
-		console.log('Stored value: ' + this.state.memory);
+		console.log('Value in memory: ' + this.state.memory);
 		console.log('Pending function setting: ' + this.state.pendingFunctionFlag);
-		console.log('Function: ' + this.state.functionKey);
+		console.log('Function key: ' + this.state.functionKey);
+	}
+
+	round(value, places) {
+		const radix = 10**places;
+		return Math.round(value * radix) / radix;
 	}
 
 	handleNumber(value) {
@@ -55,32 +60,32 @@ class Calculator extends Component {
 					currentKey: '.',
 					displayText: '0.',
 					enteredValue: '.',
-					functionKey: '',
+//					functionKey: '',
 				//	lastEnteredValue: 0,
 				//	memory: 0,
 					newEntryFlag: false,
 					previousKey: '0',
-					pendingFunctionFlag: false
+//					pendingFunctionFlag: false
 				});
 			} else {
-				displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
+				displayText = String(this.round(Number(value), radixPlaces));
 				this.setState({
 					currentKey: value,
 					displayText: displayText,
 					enteredValue: value,
-					functionKey: '',
+//					functionKey: '',
 				//	lastEnteredValue: 0,
 				//	memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
-					pendingFunctionFlag: false
+//					pendingFunctionFlag: false
 				});
 			}
 		}
 
 		if (!newEntryFlag) {
 			if (value === '.') {
-				console.log(displayText);
+//				console.log(displayText);
 				if (displayText.includes('.')) {
 					this.setState({
 						currentKey: value,
@@ -112,92 +117,153 @@ class Calculator extends Component {
 					currentKey: value,
 					displayText: displayText,
 					enteredValue: value,
-					functionKey: '',
+				//	functionKey: '',
 				//	lastEnteredValue: 0,
 				//	memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
-					pendingFunctionFlag: false
+//					pendingFunctionFlag: false
 				});
 			}
 		}
 		
-		this.diagnostics(value);
+//		this.diagnostics(value);
 	}
 
 	handleFunction(value) {
-		const m = this.state.memory;
-		const eV = Number(this.state.displayText);
+		let {
+			currentKey,
+			displayText, 
+			enteredValue,
+			functionKey,
+			lastEnteredValue,
+			memory,
+			newEntryFlag, 
+			pendingFunctionFlag,
+			previousKey, 
+			radixPlaces
+			
+		} = this.state;
 
-		if (this.state.pendingFunctionFlag) {
-			switch (this.state.function) {
+//		const memory = this.state.memory;
+		enteredValue = Number(displayText);
+		lastEnteredValue = enteredValue;
+		previousKey = currentKey;
+		currentKey = value;
+		if (pendingFunctionFlag) {
+			switch (functionKey) {
 				case '+':
+//					console.log("I made it here")
 //					result = this.state.memory + Number(this.state.displayText);
+//					console.log('memory: ' + memory);
+//					console.log('entered value: ' + enteredValue);
+//					console.log('total: ' + String(this.round(memory + enteredValue, radixPlaces)));
+//					console.log('new entry setting: ' + newEntryFlag);
 					this.setState({
-						memory: m + eV,
-						enteredValue: eV,
-						displayText: String(this.round(m + eV, this.state.radixPlaces)),
-						pendingFunctionFlag: true,
-						function: value
+						currentKey: value,
+						displayText: String(this.round(memory + enteredValue, radixPlaces)),
+						enteredValue: value,
+						functionKey: currentKey === "=" ? '' : value,
+						lastEnteredValue: lastEnteredValue,
+						memory: memory + enteredValue,
+						newEntryFlag: ! newEntryFlag,
+						pendingFunctionFlag: currentKey === "=" ? false : true,
+						previousKey: previousKey
 					});
+//					this.setState(() => ({enteredValue: enteredValue}))
 					break;
 				case '-':
 					this.setState({
-						memory: m - eV,
-						enteredValue: eV,
-						displayText: String(this.round(m - eV, this.state.radixPlaces)),
-						pendingFunctionFlag: true,
-						function: value
+						currentKey: value,
+						displayText: String(this.round(memory - enteredValue, radixPlaces)),
+						enteredValue: value,
+						functionKey: currentKey === "=" ? '' : value,
+						lastEnteredValue: lastEnteredValue,
+						memory: memory - enteredValue,
+						newEntryFlag: ! newEntryFlag,
+						pendingFunctionFlag: currentKey === "=" ? false : true,
+						previousKey: previousKey
 					});
 					break;
 				case '*':
 					this.setState({
-						memory: m * eV,
-						enteredValue: eV,
-						displayText: String(this.round(m * eV, this.state.radixPlaces)),
-						pendingFunctionFlag: true,
-						function: value
+						currentKey: value,
+						displayText: String(this.round(memory * enteredValue, radixPlaces)),
+						enteredValue: value,
+						functionKey: currentKey === "=" ? '' : value,
+						lastEnteredValue: lastEnteredValue,
+						memory: memory * enteredValue,
+						newEntryFlag: ! newEntryFlag,
+						pendingFunctionFlag: currentKey === "=" ? false : true,
+						previousKey: previousKey
 					});
 					break;
 				case '/':
 					this.setState({
-						memory: m / eV,
-						enteredValue: eV,
-						displayText: String(this.round(m / eV, this.state.radixPlaces)),
-						pendingFunctionFlag: true,
-						function: value
+						currentKey: value,
+						displayText: String(this.round(memory / enteredValue, radixPlaces)),
+						enteredValue: value,
+						functionKey: currentKey === "=" ? '' : value,
+						lastEnteredValue: lastEnteredValue,
+						memory: memory / enteredValue,
+						newEntryFlag: ! newEntryFlag,
+						pendingFunctionFlag: currentKey === "=" ? false : true,
+						previousKey: previousKey
 					});
 					break;
 				case '=':
+//					this.handleFunction(previousKey);
+//					console.log(this.state.pendingFunctionFlag);
+
 					this.setState({
-						memory: 0,
-						enteredValue: eV,
-						displayText: String(this.round(m, this.state.radixPlaces)),
-						pendingFunctionFlag: false,
-						function: ''
+//						currentKey: value,
+//						displayText: String(this.round(memory, radixPlaces)),
+//						enteredValue: enteredValue,
+						functionKey: '',
+//						lastEnteredValue: lastEnteredValue,
+//						memory: memory + lastEnteredValue,
+						newEntryFlag: true,
+//						pendingFunctionFlag: !pendingFunctionFlag,
+//						previousKey: previousKey
 					});
+					this.setState((pendingFunctionFlag) => ({pendingFunctionFlag: !pendingFunctionFlag}))
+//					console.log(this.state.pendingFunctionFlag);
+
 					break;
 				case 'clear':
 					this.setState({
+						currentKey: value,
 						displayText: '0',
-						newEntryFlag: true
+						enteredValue: 0,
+						functionKey: value,
+						lastEnteredValue: lastEnteredValue,
+						memory: enteredValue,
+						newEntryFlag: true,
+						pendingFunctionFlag: true,
+						previousKey: previousKey
 					});
 					break;
 				default:
 			}
+			/*
 			this.setState({
 				newEntryFlag: true
 			});
+			*/
 		} else {
 			this.setState({
-				memory: eV,
-				enteredValue: 0,
+				currentKey: value,
+				displayText: displayText,
+				enteredValue: value,
+				functionKey: value,
+				lastEnteredValue: lastEnteredValue,
+				memory: lastEnteredValue,
 				newEntryFlag: true,
 				pendingFunctionFlag: true,
-				function: value,
-//				displayText: ''
+				previousKey: previousKey
 			});
 		}
+
 //		this.diagnostics(value);
 	/*
 		this.setState({
@@ -205,12 +271,7 @@ class Calculator extends Component {
 			memory: Number(this.state.displayText),
 			displayText: ''
 		});
-	 */
-	}
-
-	round(value, places) {
-		const radix = 10**places;
-		return Math.round(value * radix) / radix;
+	*/
 	}
 
 	render() {

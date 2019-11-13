@@ -62,8 +62,8 @@ class Calculator extends Component {
 					displayText: '0.',
 					enteredValue: '.',
 //					functionKey: '',
-				//	lastEnteredValue: 0,
-				//	memory: 0,
+//					lastEnteredValue: 0,
+//					memory: 0,
 					newEntryFlag: false,
 					previousKey: '0',
 //					pendingFunctionFlag: false
@@ -75,8 +75,8 @@ class Calculator extends Component {
 					displayText: displayText,
 					enteredValue: value,
 //					functionKey: '',
-				//	lastEnteredValue: 0,
-				//	memory: 0,
+//					lastEnteredValue: 0,
+//					memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
 //					pendingFunctionFlag: false
@@ -86,7 +86,6 @@ class Calculator extends Component {
 
 		if (!newEntryFlag) {
 			if (value === '.') {
-//				console.log(displayText);
 				if (displayText.includes('.')) {
 					this.setState({
 						currentKey: value,
@@ -104,11 +103,11 @@ class Calculator extends Component {
 						currentKey: value,
 						displayText: displayText.concat(value),
 						enteredValue: value,
-					//	functionKey: ''
-					//	lastEnteredValue: 0,
-					//	memory: 0,
-					//	newEntryFlag: false,
-					//	pendingFunctionFlag: false,
+//						functionKey: ''
+//						lastEnteredValue: 0,
+//						memory: 0,
+//						newEntryFlag: false,
+//						pendingFunctionFlag: false,
 						previousKey: currentKey,
 					});
 				}
@@ -118,16 +117,15 @@ class Calculator extends Component {
 					currentKey: value,
 					displayText: displayText,
 					enteredValue: value,
-				//	functionKey: '',
-				//	lastEnteredValue: 0,
-				//	memory: 0,
+//					functionKey: '',
+//					lastEnteredValue: 0,
+//					memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
 //					pendingFunctionFlag: false
 				});
 			}
-		}
-		
+		}	
 //		this.diagnostics(value);
 	}
 
@@ -146,7 +144,6 @@ class Calculator extends Component {
 			
 		} = this.state;
 
-//		const memory = this.state.memory;
 		enteredValue = Number(displayText);
 		lastEnteredValue = enteredValue;
 		previousKey = currentKey;
@@ -154,12 +151,6 @@ class Calculator extends Component {
 		if (pendingFunctionFlag) {
 			switch (functionKey) {
 				case '+':
-//					console.log("I made it here")
-//					result = this.state.memory + Number(this.state.displayText);
-//					console.log('memory: ' + memory);
-//					console.log('entered value: ' + enteredValue);
-//					console.log('total: ' + String(this.round(memory + enteredValue, radixPlaces)));
-//					console.log('new entry setting: ' + newEntryFlag);
 					this.setState({
 						currentKey: value,
 						displayText: String(this.round(memory + enteredValue, radixPlaces)),
@@ -172,7 +163,6 @@ class Calculator extends Component {
 						previousKey: previousKey
 
 					});
-//					this.setState(() => ({enteredValue: enteredValue}))
 					break;
 				case '-':
 					this.setState({
@@ -215,11 +205,7 @@ class Calculator extends Component {
 					});
 					break;
 				case '=':
-//					this.handleFunction(previousKey);
-//					console.log(this.state.pendingFunctionFlag);
-
 					this.setState({
-
 //						currentKey: value,
 //						displayText: String(this.round(memory, radixPlaces)),
 //						enteredValue: enteredValue,
@@ -227,13 +213,9 @@ class Calculator extends Component {
 //						lastEnteredValue: lastEnteredValue,
 //						memory: memory + lastEnteredValue,
 						newEntryFlag: true,
-//						pendingFunctionFlag: !pendingFunctionFlag,
+						pendingFunctionFlag: !pendingFunctionFlag,
 //						previousKey: previousKey
-
 					});
-					this.setState((pendingFunctionFlag) => ({pendingFunctionFlag: !pendingFunctionFlag}))
-//					console.log(this.state.pendingFunctionFlag);
-
 					break;
 				case 'clear':
 					this.setState({
@@ -250,11 +232,6 @@ class Calculator extends Component {
 					break;
 				default:
 			}
-			/*
-			this.setState({
-				newEntryFlag: true
-			});
-			*/
 		} else {
 			this.setState({
 				currentKey: value,
@@ -268,15 +245,7 @@ class Calculator extends Component {
 				previousKey: previousKey
 			});
 		}
-
 //		this.diagnostics(value);
-	/*
-		this.setState({
-			pendingFunction: (this.state.pendingFunction).concat(value),
-			memory: Number(this.state.displayText),
-			displayText: ''
-		});
-	*/
 	}
 
 	render() {

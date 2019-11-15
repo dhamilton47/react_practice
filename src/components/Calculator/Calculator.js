@@ -4,24 +4,17 @@ import { Display } from "./Display";
 import { CalculatorKey } from './CalculatorKey';
 
 class Calculator extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			currentKey: '',
-			displayText: '0',
-			enteredValue: 0,
-			functionKey: '',
-			lastEnteredValue: 0,
-			memory: 0,
-			newEntryFlag: true,
-			pendingFunctionFlag: false,
-			previousKey: '',
-			radixPlaces: 4
-		};
-
-		this.handleNumber = this.handleNumber.bind(this);
-		this.handleFunction = this.handleFunction.bind(this);
+	state = {
+		currentKey: '',
+		displayText: '0',
+		enteredValue: 0,
+		functionKey: '',
+		lastEnteredValue: 0,
+		memory: 0,
+		newEntryFlag: true,
+		pendingFunctionFlag: false,
+		previousKey: '',
+		radixPlaces: 4
 	}
 
 	index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
@@ -63,7 +56,7 @@ class Calculator extends Component {
 		return Math.round(value * radix) / radix;
 	}
 
-	handleNumber(value) {
+	handleNumber = (value) => {
 		let {
 			currentKey,
 			displayText, 
@@ -151,7 +144,7 @@ class Calculator extends Component {
 //		this.diagnostics(value);
 	}
 
-	handleFunction(value) {
+	handleFunction = (value) => {
 		let {
 			currentKey,
 			displayText, 
@@ -272,7 +265,7 @@ class Calculator extends Component {
 	render() {
 		return (
 			<div className="calculator">
-				<Display displayText={this.state.displayText}/>
+				<Display displayText={ this.state.displayText }/>
 				{
 					this.index.map(i => 
 						<CalculatorKey 
@@ -280,7 +273,8 @@ class Calculator extends Component {
 							styling={ this.stylesUsed[i] }
 							value={ this.keyNames[i] }
 							onClick={ this.handlerUsed[i] }
-						/>)
+						/>
+					)
 				}
 			</div>
 		)

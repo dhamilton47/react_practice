@@ -53,13 +53,7 @@ class Calculator extends Component {
 		let {
 			currentKey,
 			displayText, 
-//			enteredValue,
-//			functionKey,
-//			lastEnteredValue,
-//			memory,
 			newEntryFlag, 
-//			pendingFunctionFlag,
-//			previousKey, 
 			radixPlaces
 		} = this.state;
 
@@ -69,12 +63,8 @@ class Calculator extends Component {
 					currentKey: '.',
 					displayText: '0.',
 					enteredValue: '.',
-//					functionKey: '',
-//					lastEnteredValue: 0,
-//					memory: 0,
 					newEntryFlag: false,
 					previousKey: '0',
-//					pendingFunctionFlag: false
 				});
 			} else {
 				displayText = String(this.round(Number(value), radixPlaces));
@@ -82,12 +72,8 @@ class Calculator extends Component {
 					currentKey: value,
 					displayText: displayText,
 					enteredValue: value,
-//					functionKey: '',
-//					lastEnteredValue: 0,
-//					memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
-//					pendingFunctionFlag: false
 				});
 			}
 		}
@@ -99,11 +85,6 @@ class Calculator extends Component {
 						currentKey: value,
 						displayText: displayText,
 						enteredValue: '',
-					//	functionKey: ''
-					//	lastEnteredValue: 0,
-					//	memory: 0,
-					//	newEntryFlag: false,
-					//	pendingFunctionFlag: false,
 						previousKey: currentKey,
 					});
 				} else {
@@ -111,11 +92,6 @@ class Calculator extends Component {
 						currentKey: value,
 						displayText: displayText.concat(value),
 						enteredValue: value,
-//						functionKey: ''
-//						lastEnteredValue: 0,
-//						memory: 0,
-//						newEntryFlag: false,
-//						pendingFunctionFlag: false,
 						previousKey: currentKey,
 					});
 				}
@@ -125,12 +101,8 @@ class Calculator extends Component {
 					currentKey: value,
 					displayText: displayText,
 					enteredValue: value,
-//					functionKey: '',
-//					lastEnteredValue: 0,
-//					memory: 0,
 					newEntryFlag: false,
 					previousKey: currentKey,
-//					pendingFunctionFlag: false
 				});
 			}
 		}	
@@ -227,15 +199,9 @@ class Calculator extends Component {
 					break;
 				case '=':
 					this.setState({
-//						currentKey: value,
-//						displayText: String(this.round(memory, radixPlaces)),
-//						enteredValue: enteredValue,
 						functionKey: '',
-//						lastEnteredValue: lastEnteredValue,
-//						memory: memory + lastEnteredValue,
 						newEntryFlag: true,
 						pendingFunctionFlag: !pendingFunctionFlag,
-//						previousKey: previousKey
 					});
 					break;
 				default:

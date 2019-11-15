@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Display = props => {
+export const Display = ({displayText}) => {
 		return (
 			<div className="display">
-				{props.displayText}
+				{ displayText }
 			</div>
 		)
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 
-export const CalculatorKey = props=> {
+export const CalculatorKey = ({keyInfo}) => {
+//	console.log(keyInfo)
 	return (
 		<button
 			type="button"
-			className={props.styling}
-			onClick={props.onClick}
+			className={keyInfo[1]}
+			onClick={keyInfo[2]}
 		>
-			{props.value}
+			{keyInfo[0]}
 		</button>
 	);
 }

@@ -3,6 +3,8 @@ import './Calculator.css';
 import { Display } from "./Display";
 import { CalculatorKey } from './CalculatorKey';
 
+
+
 class Calculator extends Component {
 	constructor(props) {
 		super(props);
@@ -23,28 +25,6 @@ class Calculator extends Component {
 		this.handleNumber = this.handleNumber.bind(this);
 		this.handleFunction = this.handleFunction.bind(this);
 	}
-
-	index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-	stylesUsed = ['btn-lg', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm', 'btn-sm','btn-sm' , 'btn-md', 'btn-sm', 'btn-sm'];
-	keyNames = ['clear', '+', '7', '8', '9', '-', '4', '5', '6', '*', '1', '2', '3', '/', '0', '.', '='];
-    handlerUsed = [() => this.handleFunction('clear'),
-				() => this.handleFunction('+'),
-				() => this.handleNumber('7'),
-				() => this.handleNumber('8'),
-				() => this.handleNumber('9'),
-				() => this.handleFunction('-'),
-				() => this.handleNumber('4'),
-				() => this.handleNumber('5'),
-				() => this.handleNumber('6'),
-				() => this.handleFunction('*'),
-				() => this.handleNumber('1'),
-				() => this.handleNumber('2'),
-				() => this.handleNumber('3'),
-				() => this.handleFunction('/'),
-				() => this.handleNumber('0'),
-				() => this.handleNumber('.'),
-				() => this.handleFunction('=')
-			];
 	
 	diagnostics(value) {
 		console.log('Button pressed: ' + value);
@@ -148,7 +128,7 @@ class Calculator extends Component {
 				});
 			}
 		}	
-//		this.diagnostics(value);
+		this.diagnostics(value);
 	}
 
 	handleFunction(value) {
@@ -169,7 +149,21 @@ class Calculator extends Component {
 		lastEnteredValue = enteredValue;
 		previousKey = currentKey;
 		currentKey = value;
-		if (pendingFunctionFlag) {
+
+		if(value === 'clear') {
+			this.setState({
+//				...this.state,
+				currentKey: '',
+				displayText: '0',
+				enteredValue: 0,
+				functionKey: functionKey,
+				lastEnteredValue: lastEnteredValue,
+				memory: memory,
+				newEntryFlag: newEntryFlag,
+				pendingFunctionFlag: pendingFunctionFlag,
+				previousKey: previousKey
+			});
+		} else if (pendingFunctionFlag) {
 			switch (functionKey) {
 				case '+':
 					this.setState({
@@ -238,19 +232,6 @@ class Calculator extends Component {
 //						previousKey: previousKey
 					});
 					break;
-				case 'clear':
-					this.setState({
-						currentKey: value,
-						displayText: '0',
-						enteredValue: 0,
-						functionKey: value,
-						lastEnteredValue: lastEnteredValue,
-						memory: enteredValue,
-						newEntryFlag: true,
-						pendingFunctionFlag: true,
-						previousKey: previousKey
-					});
-					break;
 				default:
 			}
 		} else {
@@ -266,22 +247,100 @@ class Calculator extends Component {
 				previousKey: previousKey
 			});
 		}
-//		this.diagnostics(value);
+		this.diagnostics(value);
 	}
+
+	
 
 	render() {
 		return (
 			<div className="calculator">
 				<Display displayText={this.state.displayText}/>
-				{
-					this.index.map(i => 
-						<CalculatorKey 
-							key={ i } 
-							styling={ this.stylesUsed[i] }
-							value={ this.keyNames[i] }
-							onClick={ this.handlerUsed[i] }
-						/>)
-				}
+				<CalculatorKey
+					styling={'btn-lg'}
+					value={'clear'}
+					onClick={() => this.handleFunction('clear')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'+'}
+					onClick={() => this.handleFunction('+')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'7'}
+					onClick={() => this.handleNumber('7')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'8'}
+					onClick={() => this.handleNumber('8')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'9'}
+					onClick={() => this.handleNumber('9')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'-'}
+					onClick={() => this.handleFunction('-')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'4'}
+					onClick={() => this.handleNumber('4')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'5'}
+					onClick={() => this.handleNumber('5')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'6'}
+					onClick={() => this.handleNumber('6')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'*'}
+					onClick={() => this.handleFunction('*')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'1'}
+					onClick={() => this.handleNumber('1')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'2'}
+					onClick={() => this.handleNumber('2')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'3'}
+					onClick={() => this.handleNumber('3')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'/'}
+					onClick={() => this.handleFunction('/')}
+				/>
+				<CalculatorKey
+					styling={'btn-md'}
+					value={'0'}
+					onClick={() => this.handleNumber('0')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'.'}
+					onClick={() => this.handleNumber('.')}
+				/>
+				<CalculatorKey
+					styling={'btn-sm'}
+					value={'='}
+					onClick={() => this.handleFunction('=')}
+				/>
 			</div>
 		)
 	}

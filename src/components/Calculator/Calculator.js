@@ -3,7 +3,28 @@ import './Calculator.css';
 import { Display } from "./Display";
 import { CalculatorKey } from './CalculatorKey';
 
-const keyNames = ['clear', '+', '7', '8', '9', '-', '4', '5', '6', '*', '1', '2', '3', '/', '0', '.', '='];
+const keys = ['C','CE', '+', '7', '8', '9', '-', '4', '5', '6', 'x', '1', '2', '3', '/', '0', '.', '='];
+
+function doMath(memory, enteredValue, operator) {
+	switch (operator) {
+		case '+':
+			return memory + enteredValue;
+		case '-':
+			return memory - enteredValue;
+		case 'x':
+			return memory * enteredValue;
+		case '/':
+			if (enteredValue === "0") return Infinity;
+			return memory / enteredValue;
+		default:
+			return 'Impossible state!'
+	}
+}
+
+function round(value, places) {
+	const radix = 10**places;
+	return Math.round(value * radix) / radix;
+}
 
 class Calculator extends Component {
 	state = {
@@ -20,14 +41,12 @@ class Calculator extends Component {
 	}
 
 	createKeyParameters(value) {
-		const stylesUsed = ['btn-sm','btn-md',  'btn-lg'];
-		let style = stylesUsed[0]
-		if (value === "clear") style = stylesUsed[2]
-		if (value === "0") style = stylesUsed[1]
+		let style = 'btn-sm';
+		if (value === "C" || value === "0") style = 'btn-md';
 
 		let handler;
 		if ("0123456789.".includes(value)) handler = () => this.handleNumber(value)
-		if ("+-*/clear=".includes(value)) handler = () =>this.handleFunction(value)
+		if ("+-*/CE".includes(value)) handler = () =>this.handleFunction(value)
 
 		return [value, style, handler]	
 	}
@@ -44,17 +63,14 @@ class Calculator extends Component {
 		console.log('Function key: ' + this.state.functionKey);
 	}
 
-	round(value, places) {
-		const radix = 10**places;
-		return Math.round(value * radix) / radix;
-	}
+
 
 	handleNumber = (value) => {
 		let {
 			currentKey,
 			displayText, 
 			newEntryFlag, 
-			radixPlaces
+//			radixPlaces
 		} = this.state;
 
 		if (newEntryFlag) {
@@ -67,7 +83,7 @@ class Calculator extends Component {
 					previousKey: '0',
 				});
 			} else {
-				displayText = String(this.round(Number(value), radixPlaces));
+				displayText = value;
 				this.setState({
 					currentKey: value,
 					displayText: displayText,
@@ -96,7 +112,7 @@ class Calculator extends Component {
 					});
 				}
 			} else {
-				displayText = String(this.round(Number(displayText.concat(value)), radixPlaces));
+				displayText = displayText.concat(value);
 				this.setState({
 					currentKey: value,
 					displayText: displayText,
@@ -142,15 +158,17 @@ class Calculator extends Component {
 				previousKey: previousKey
 			});
 		} else if (pendingFunctionFlag) {
+			const answerValue = round(doMath(memory, enteredValue, functionKey), radixPlaces);
+			const answerText = String(answerValue);
 			switch (functionKey) {
 				case '+':
 					this.setState({
 						currentKey: value,
-						displayText: String(this.round(memory + enteredValue, radixPlaces)),
+						displayText: answerText,
 						enteredValue: value,
 						functionKey: currentKey === "=" ? '' : value,
 						lastEnteredValue: lastEnteredValue,
-						memory: memory + enteredValue,
+						memory: answerValue,
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
@@ -160,11 +178,11 @@ class Calculator extends Component {
 				case '-':
 					this.setState({
 						currentKey: value,
-						displayText: String(this.round(memory - enteredValue, radixPlaces)),
+						displayText: answerText,
 						enteredValue: value,
 						functionKey: currentKey === "=" ? '' : value,
 						lastEnteredValue: lastEnteredValue,
-						memory: memory - enteredValue,
+						memory: answerValue,
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
@@ -174,11 +192,11 @@ class Calculator extends Component {
 				case '*':
 					this.setState({
 						currentKey: value,
-						displayText: String(this.round(memory * enteredValue, radixPlaces)),
+						displayText: answerText,
 						enteredValue: value,
 						functionKey: currentKey === "=" ? '' : value,
 						lastEnteredValue: lastEnteredValue,
-						memory: memory * enteredValue,
+						memory: answerValue,
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
@@ -187,11 +205,11 @@ class Calculator extends Component {
 				case '/':
 					this.setState({
 						currentKey: value,
-						displayText: String(this.round(memory / enteredValue, radixPlaces)),
+						displayText: answerText,
 						enteredValue: value,
 						functionKey: currentKey === "=" ? '' : value,
 						lastEnteredValue: lastEnteredValue,
-						memory: memory / enteredValue,
+						memory: answerValue,
 						newEntryFlag: ! newEntryFlag,
 						pendingFunctionFlag: currentKey === "=" ? false : true,
 						previousKey: previousKey
@@ -227,10 +245,10 @@ class Calculator extends Component {
 			<div className="calculator">
 				<Display displayText={ this.state.displayText }/>
 				{
-					keyNames.map(i =>
+					keys.map(key =>
 						<CalculatorKey
-							key={i}
-							keyInfo = { this.createKeyParameters(i) }
+							key={ key }
+							keyInfo = { this.createKeyParameters(key) }
 						/>
 					)
 				}

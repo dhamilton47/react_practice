@@ -46,7 +46,7 @@ class Calculator extends Component {
 
 		let handler;
 		if ("0123456789.".includes(value)) handler = () => this.handleNumber(value)
-		if ("+-*/CE".includes(value)) handler = () =>this.handleFunction(value)
+		if ("+-x/CE=".includes(value)) handler = () =>this.handleFunction(value)
 
 		return [value, style, handler]	
 	}
@@ -144,7 +144,20 @@ class Calculator extends Component {
 		previousKey = currentKey;
 		currentKey = value;
 
-		if(value === 'clear') {
+		if(value === 'CE') {
+			this.setState({
+//				...this.state,
+				currentKey: '',
+				displayText: '0',
+				enteredValue: 0,
+				functionKey: '',
+				lastEnteredValue: 0,
+				memory: 0,
+				newEntryFlag: true,
+				pendingFunctionFlag: false,
+				previousKey: ''
+	});
+		} else if(value === 'C') {
 			this.setState({
 //				...this.state,
 				currentKey: '',
@@ -189,7 +202,7 @@ class Calculator extends Component {
 
 					});
 					break;
-				case '*':
+				case 'x':
 					this.setState({
 						currentKey: value,
 						displayText: answerText,

@@ -2,29 +2,10 @@ import React, { Component } from 'react';
 import './Calculator.css';
 import { Display } from "./Display";
 import { CalculatorKey } from './CalculatorKey';
+import { doMath } from './doMath';
+import { round } from './round';
 
 const keys = ['C','CE', '+', '7', '8', '9', '-', '4', '5', '6', 'x', '1', '2', '3', '/', '0', '.', '='];
-
-function doMath(memory, enteredValue, operator) {
-	switch (operator) {
-		case '+':
-			return memory + enteredValue;
-		case '-':
-			return memory - enteredValue;
-		case 'x':
-			return memory * enteredValue;
-		case '/':
-			if (enteredValue === "0") return Infinity;
-			return memory / enteredValue;
-		default:
-			return 'Impossible state!'
-	}
-}
-
-function round(value, places) {
-	const radix = 10**places;
-	return Math.round(value * radix) / radix;
-}
 
 class Calculator extends Component {
 	state = {
@@ -70,47 +51,40 @@ class Calculator extends Component {
 			currentKey,
 			displayText, 
 			newEntryFlag, 
-//			radixPlaces
+			previousKey
 		} = this.state;
 
 		if (newEntryFlag) {
 			if (value === ".") {
-				this.setState({ 
-					currentKey: '.',
-					displayText: '0.',
-					enteredValue: '.',
-					newEntryFlag: false,
-					previousKey: '0',
-				});
+				displayText = '0.';
+				previousKey = '0';
 			} else {
 				displayText = value;
-				this.setState({
-					currentKey: value,
-					displayText: displayText,
-					enteredValue: value,
-					newEntryFlag: false,
-					previousKey: currentKey,
-				});
+				previousKey = currentKey;
 			}
+			return this.setState({
+				currentKey: value,
+				displayText: displayText,
+				enteredValue: value,
+				newEntryFlag: false,
+				previousKey: previousKey,
+			});
 		}
 
 		if (!newEntryFlag) {
 			if (value === '.') {
+				let enteredValue = value;
 				if (displayText.includes('.')) {
-					this.setState({
-						currentKey: value,
-						displayText: displayText,
-						enteredValue: '',
-						previousKey: currentKey,
-					});
+					enteredValue = '';
 				} else {
-					this.setState({
-						currentKey: value,
-						displayText: displayText.concat(value),
-						enteredValue: value,
-						previousKey: currentKey,
-					});
+					displayText = displayText.concat(value);
 				}
+				return this.setState({
+					currentKey: value,
+					displayText: displayText,
+					enteredValue: enteredValue,
+					previousKey: currentKey,
+				});
 			} else {
 				displayText = displayText.concat(value);
 				this.setState({
@@ -144,7 +118,7 @@ class Calculator extends Component {
 		previousKey = currentKey;
 		currentKey = value;
 
-		if(value === 'CE') {
+		if(value === 'C') {
 			this.setState({
 //				...this.state,
 				currentKey: '',
@@ -157,7 +131,7 @@ class Calculator extends Component {
 				pendingFunctionFlag: false,
 				previousKey: ''
 	});
-		} else if(value === 'C') {
+		} else if(value === 'CE') {
 			this.setState({
 //				...this.state,
 				currentKey: '',
